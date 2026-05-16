@@ -1,10 +1,10 @@
 const cardapioData = {
   "cafes-quentes": [
-    { nome: "Gatofé Expresso",   desc: "Expresso encorpado e intenso.",                    preco: "R$4",  img: "img/cafes-quentes/gatof-expresso.jpg" },
-    { nome: "Catpuccino",        desc: "Espuma cremosa com leite vaporizado.",              preco: "R$8",  img: "img/cafes-quentes/catpuccino.jpg" },
-    { nome: "Café Meowtcha",     desc: "Blend especial de matcha com café.",               preco: "R$14", img: "img/cafes-quentes/meowtcha.jpg" },
-    { nome: "Latte",             desc: "Latte suave com canela e mel.",                    preco: "R$12", img: "img/cafes-quentes/latte-canela.jpg" },
-    { nome: "Chocolate Quente",  desc: "Leite com achocolatado quente e cremoso.",         preco: "R$15", img: "img/cafes-quentes/mocha.jpg" },
+    { nome: "Gatofé Expresso",   desc: "Expresso encorpado e intenso.",                    preco: "R$4",  img: "img/gatofe-expresso.jpeg" },
+    { nome: "Catpuccino",        desc: "Espuma cremosa com leite vaporizado.",              preco: "R$8",  img: "img/catpuccino.jpeg" },
+    { nome: "Café Meowtcha",     desc: "Blend especial de matcha com café.",               preco: "R$14", img: "img/meowtcha.jpeg" },
+    { nome: "Latte",             desc: "Latte suave com canela e mel.",                    preco: "R$12", img: "img/latte.jpeg" },
+    { nome: "Chocolate Quente",  desc: "Leite com achocolatado quente e cremoso.",         preco: "R$15", img: "img/chocolate-quente.jpeg" },
   ],
   "cafes-gelados": [
     { nome: "Cold Paw Brew",      desc: "Cold brew infusionado por 18 horas.",             preco: "R$14", img: "img/cold-paw.jpg" },
