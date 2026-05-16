@@ -1,0 +1,213 @@
+
+.menu {
+  padding: 48px 24px;
+  background: #FFF8F0;
+}
+
+.cardapio-wrap {
+  background: #fff;
+  border-radius: 20px;
+  border: 1.5px solid #f0d0b0;
+  padding: 32px 28px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.cardapio-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cardapio-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5A2D00;
+  margin-bottom: 16px;
+}
+
+.cardapio-botoes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ctab {
+  background: transparent;
+  border: 2px solid #C4600A;
+  color: #C4600A;
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.ctab:hover,
+.ctab.active {
+  background: #C4600A;
+  color: #fff;
+}
+
+.cardapio-search {
+  margin-bottom: 24px;
+}
+
+.cardapio-search input {
+  width: 100%;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #f0d0b0;
+  font-size: 14px;
+  color: #5A2D00;
+  outline: none;
+  background: #FFF8F0;
+  font-family: inherit;
+}
+
+.cardapio-search input:focus {
+  border-color: #C4600A;
+}
+
+/* ===== Seção por categorias ===== */
+
+.menu-secao {
+  margin-bottom: 36px;
+}
+
+.menu-secao-titulo {
+  font-size: 12px;
+  font-weight: 700;
+  color: #C4600A;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid #f0d0b0;
+}
+
+/* ===== CARROSSEL ===== */
+
+.menu-carrossel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-carrossel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #C4600A #f2dfc8;
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.menu-carrossel::-webkit-scrollbar {
+  height: 5px;
+}
+
+.menu-carrossel::-webkit-scrollbar-track {
+  background: #f2dfc8;
+  border-radius: 4px;
+}
+
+.menu-carrossel::-webkit-scrollbar-thumb {
+  background: #C4600A;
+  border-radius: 4px;
+}
+
+.menu-arr {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #7B3F00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.menu-arr:hover {
+  opacity: 1;
+}
+
+/* ===== Card dos item ===== */
+
+.menu-card {
+  min-width: 200px;
+  max-width: 200px;
+  background: #fff;
+  border: 1.5px solid #f0d0b0;
+  border-radius: 16px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+}
+
+.menu-card:hover {
+  border-color: #C4600A;
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 130px;
+  background: #FFF3E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.menu-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card-info {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.menu-card-nome {
+  font-size: 14px;
+  color: #5A2D00;
+  font-weight: 700;
+}
+
+.menu-card-desc {
+  font-size: 12px;
+  color: #9A6040;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.menu-card-preco {
+  display: inline-block;
+  margin-top: 8px;
+  background: #C4600A;
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  align-self: flex-start;
+}

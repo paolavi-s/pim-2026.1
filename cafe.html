@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cafe.css">
+    <link rel="stylesheet" href="css/cardapio.css">
     <title>Gafeteria Nekoffee</title>
 </head>
 <body>
 
     <header class="topbar">
         <div class="brand">
-            <img src="img/logotipo.png" alt="Nekoffee" class="logo-img">
+            <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="logo-img">
         </div>
         <nav class="navbar">
+            <a href="#inicio">Início</a>
             <a href="#sobre">Sobre nós</a>
             <a href="#cardapio">Cardápio</a>
             <a href="#adocao">Adoção</a>
@@ -22,25 +24,56 @@
     </header>    
     
     <main id="inicio">
-        <h1>Seja bem-vindo à Gafeteria Nekoffee!</h1>
-        <h2>O lugar perfeito para um café e um cafuné</h2>
-                <img class="hero-img" src="img/homewpage.jpg" alt="Gato laranja fofinho">
+        <div class="hero">
+            <div class="hero-texto">
+                <h1>Seja bem-vindo à Gafeteria Nekoffee!</h1>
+                <h2>O lugar perfeito para um café e um cafuné</h2>
+            </div>
 
+            <div class="hero-carrossel">
+                <input type="radio" name="slide" id="s1" checked>
+                <input type="radio" name="slide" id="s2">
+                <input type="radio" name="slide" id="s3">
+                <input type="radio" name="slide" id="s4">
+
+                <div class="carrossel-track">
+                    <img src="img/homeowpage.jpg" alt="Gato laranja fofinho">
+                    <img src="img/Meowtcha.png"    alt="Prato do cardápio">
+                    <img src="img/interior-cafe.png"     alt="Interior do café">
+                    <img src="img/area-gatos.png" alt="Área dos gatos">
+                </div>
+
+                <label class="carrossel-btn prev p1" for="s4">&#8592;</label>
+                <label class="carrossel-btn prev p2" for="s1">&#8592;</label>
+                <label class="carrossel-btn prev p3" for="s2">&#8592;</label>
+                <label class="carrossel-btn prev p4" for="s3">&#8592;</label>
+
+                <label class="carrossel-btn next n1" for="s2">&#8594;</label>
+                <label class="carrossel-btn next n2" for="s3">&#8594;</label>
+                <label class="carrossel-btn next n3" for="s4">&#8594;</label>
+                <label class="carrossel-btn next n4" for="s1">&#8594;</label>
+
+                <div class="carrossel-dots">
+                    <label for="s1" class="dot d1"></label>
+                    <label for="s2" class="dot d2"></label>
+                    <label for="s3" class="dot d3"></label>
+                    <label for="s4" class="dot d4"></label>
+                </div>
+            </div>
+        </div>
     </main>
 
     <section id="sobre" class="sobre-nos">
         <h2>Sobre nós</h2>
-
-        <div class="sobre-conteudo">
-            <img src="img/gatinho.png" alt="ALGUMA DESGRAÇA DE NOVO">
-            <p>A cafeteria NekoCafe é um estabelecimento com foco em gatos. Funcionamos como uma cafeteria normal, porém focamos no resgate de animais em situação de rua e os ajudamos a encontrar um lar para viverem felizes. Trabalhamos com adoção responsável.</p>
-            <p>Se você é um amante de gatos e adora passar um tempo com eles, este é o lugar perfeito! Mesmo que seu desejo não seja adotar, ainda é possível desfrutar da companhia dos nosso felinos agendando um horário. Está interessado? </p>
+        <div class="sobre-wrapper">
+            <img src="img/gato-about-us.jpeg" alt="Gato curioso" class="sobre-gato">
+            <div class="sobre-conteudo">
+                <p>A cafeteria Nekoffee é um estabelecimento com foco em gatos. Funcionamos como uma cafeteria normal, porém focamos no resgate de animais em situação de rua e os ajudamos a encontrar um lar para viverem felizes. Incentivamos a adoção responsável.</p>
+                <p>Se você é um amante de gatos e adora passar um tempo com eles, este é o lugar perfeito! Mesmo que seu desejo não seja adotar, ainda é possível desfrutar da companhia dos nosso felinos agendando um horário. Está interessado? </p>
+            </div>
         </div>
-
         <h2>Regras</h2>
-
         <p class="regras-intro">Nós lidamos com bichinhos todos os dias, por tanto é importante que saibamos respeitar o espaço pessoal deles. Por isso, criamos algumas regras:</p>
-
         <div class="regras-cards">
             <div class="card">
                 <h3>1. Sem Flash</h3>
@@ -57,5 +90,202 @@
         </div>
     </section>
 
+    <section id="cardapio" class="menu">
+        <div class="cardapio-wrap">
+            <div class="cardapio-header">
+                <h2>Cardápio</h2>
+                <div class="cardapio-botoes">
+                    <button class="ctab active" onclick="showTab('todos', this)">Todos</button>
+                    <button class="ctab" onclick="showTab('cafes-quentes', this)">Cafés quentes</button>
+                    <button class="ctab" onclick="showTab('cafes-gelados', this)">Cafés gelados</button>
+                    <button class="ctab" onclick="showTab('salgados', this)">Salgados</button>
+                    <button class="ctab" onclick="showTab('doces', this)">Doces</button>
+                </div>
+            </div>
+            <div class="cardapio-body">
+                <div class="cardapio-search">
+                    <input type="text" placeholder="Buscar no cardápio..." oninput="filterItems(this.value)" id="search" />
+                </div>
+                <div id="cardapio-conteudo"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="adocao" class="adocao">
+        <h2>Adoção</h2>
+        <p class="adocao-intro">Esses são nossos gatinhos que estão precisando de um lar. Vamos conhecer eles?</p>
+        <div class="adocao-cards">
+            <div class="adocao-card">
+                <div class="adocao-foto-gato1">
+                    <img src="img/valentino-lacinho.jpg" alt="Gato sem lar com laço">
+                </div>
+                <div class="adocao-info">
+                    <h3>Valentino</h3>
+                    <p>Idade: 11 meses</p>
+                    <p>Personalidade: Guloso</p>
+                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                    
+                </div>
+            </div>
+            <div class="adocao-card">
+                <div class="adocao-foto-gato1">
+                    <img src="img/meire-fofinha.jpg" alt="Gatinha tigrada sem lar">
+                </div>
+                <div class="adocao-info">
+                    <h3>Mirabel</h3>
+                    <p>Idade: 3 meses</p>
+                    <p>Personalidade: Preguiçosa</p>
+                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                    
+                </div>
+            </div>
+            <div class="adocao-card">
+                <div class="adocao-foto-gato1">
+                    <img src="img/malu-fofinha.jpeg" alt="Gata maionese no muro dormindo">
+                </div>
+                <div class="adocao-info">
+                    <h3>Malu</h3>
+                    <p>Idade: 12 anos</p>
+                    <p>Personalidade: Carinhosa</p>
+                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                    
+                </div>
+            </div>
+            <div class="adocao-card">
+                <div class="adocao-foto-gato1">
+                    <img src="img/maria.png" alt="Gatinha deitada dormindo">
+                </div>
+                <div class="adocao-info">
+                    <h3>Maria</h3>
+                    <p>Idade: 4 meses</p>
+                    <p>Personalidade: Dorminhoca</p>
+                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                    
+                </div>
+            </div>
+            <div class="adocao-card">
+                <div class="adocao-foto-gato1">
+                    <img src="img/batatinha-nenem.jpeg" alt="Gatinho laranja brincando de carrinho">
+                </div>
+                <div class="adocao-info">
+                    <h3>Batatinha</h3>
+                    <p>Idade: 5 meses</p>
+                    <p>Personalidade: Brincalhão</p>
+                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                    
+
+                </div>
+            </div>
+            <div class="adocao-card">
+                <div class="adocao-foto-gato1">
+                    <img src="img/sonic.jpeg" alt="Gato dormindo com expressão engraçada">
+                </div>
+                <div class="adocao-info">
+                    <h3>Sonic</h3>
+                    <p>Idade: 3 anos</p>
+                    <p>Personalidade: Sapeca</p>
+                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTATO ==================== -->
+    <section id="contato">
+        <div class="contato-wrap">
+
+            <!-- Lado esquerdo informações -->
+            <div class="contato-info">
+                <div>
+                    <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="contato-logo-img">
+                </div>
+
+                <hr class="contato-divider">
+
+                <div class="contato-itens">
+                    <div class="contato-item">
+                        <span class="contato-icone">✉</span>
+                        <div class="contato-texto">
+                            <span class="contato-label">E-mail</span>
+                            <p>contato@nekoffee.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <span class="contato-icone">⏱</span>
+                        <div class="contato-texto">
+                            <span class="contato-label">Horário</span>
+                            <p>Terça a sexta: 10h30 às 18h00</p>
+                            <p>Sábado e domingo: 9h30 às 19h00</p>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <span class="contato-icone">☏</span>
+                        <div class="contato-texto">
+                            <span class="contato-label">Telefone</span>
+                            <p>(11) 99999-9999</p>
+                            <p class="contato-hint">Atendemos apenas em horário comercial! ฅᨐฅ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="contato-divider">
+
+                <div class="contato-redes">
+                    <span class="contato-label">Redes sociais</span>
+                    <div class="contato-social">
+                        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+                        <a href="#" class="social-btn" aria-label="Instagram">in</a>
+                        <a href="#" class="social-btn" aria-label="WhatsApp">w</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lado direito formulário -->
+            <div class="contato-form">
+                <h2>Deixe uma mensagem</h2>
+                <p class="contato-subtitulo">Deixe aqui embaixo seu feedback! •⩊•</p>
+
+                <form>
+                    <div class="contato-campo">
+                        <label for="c-nome">Nome</label>
+                        <input type="text" id="c-nome" placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="contato-form-row">
+                        <div class="contato-campo">
+                            <label for="c-email">E-mail</label>
+                            <input type="email" id="c-email" placeholder="seu@email.com">
+                        </div>
+                        <div class="contato-campo">
+                            <label for="c-tel">Telefone</label>
+                            <input type="tel" id="c-tel" placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+
+                    <div class="contato-campo">
+                        <label for="c-msg">Mensagem</label>
+                        <textarea id="c-msg" placeholder="Escreva sua mensagem..."></textarea>
+                    </div>
+
+                    <div class="contato-check">
+                        <input type="checkbox" id="c-lgpd">
+                        <label for="c-lgpd">
+                            Concordo com a <a href="#">política de privacidade</a> e autorizo o contato pela Nekoffee.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="contato-enviar">Enviar mensagem ➤</button>
+                </form>
+            </div>
+
+
+            
+        </div>
+    </section>
+
+    <script src="js/cardapio.js"></script>
 </body>
 </html>

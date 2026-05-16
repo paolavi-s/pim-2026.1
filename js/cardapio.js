@@ -1,0 +1,107 @@
+const cardapioData = {
+  "cafes-quentes": [
+    { nome: "Gatofé Expresso",   desc: "Expresso encorpado e intenso.",                    preco: "R$4",  img: "img/cafes-quentes/gatof-expresso.jpg" },
+    { nome: "Catpuccino",        desc: "Espuma cremosa com leite vaporizado.",              preco: "R$8",  img: "img/cafes-quentes/catpuccino.jpg" },
+    { nome: "Café Meowtcha",     desc: "Blend especial de matcha com café.",               preco: "R$14", img: "img/cafes-quentes/meowtcha.jpg" },
+    { nome: "Latte",             desc: "Latte suave com canela e mel.",                    preco: "R$12", img: "img/cafes-quentes/latte-canela.jpg" },
+    { nome: "Chocolate Quente",  desc: "Leite com achocolatado quente e cremoso.",         preco: "R$15", img: "img/cafes-quentes/mocha.jpg" },
+  ],
+  "cafes-gelados": [
+    { nome: "Cold Paw Brew",      desc: "Cold brew infusionado por 18 horas.",             preco: "R$14", img: "img/cold-paw.jpg" },
+    { nome: "Frappé Miado",       desc: "Frappé cremoso com caramelo e chantilly.",        preco: "R$16", img: "img/frappe.jpg" },
+    { nome: "Iced Matcha",        desc: "Matcha gelado com leite de aveia.",               preco: "R$15", img: "img/iced-matcha.jpg" },
+    { nome: "Milkshake de Café",  desc: "Milkshake artesanal sabor café intenso.",         preco: "R$13", img: "img/milkshake.jpg" },
+    { nome: "Chá Gelado",         desc: "Chá da casa refrescante com limão e hortelã.",    preco: "R$10", img: "img/cha.jpg" },
+  ],
+  "salgados": [
+    { nome: "Croissant de Queijo", desc: "Croissant folhado com queijo derretido.",        preco: "R$9",  img: "img/croissant.png" },
+    { nome: "Pão de Queijo",       desc: "Clássico brasileiro fresquinho e crocante.",     preco: "R$5",  img: "img/pao-de-queijo.png" },
+    { nome: "Sanduba do Chef",     desc: "Sanduíche de frango com pesto e rúcula.",        preco: "R$22", img: "img/sanduba.jpg" },
+    { nome: "Quiche Espinafre",    desc: "Quiche cremosa com espinafre e ricota.",         preco: "R$18", img: "img/quiche.jpg" },
+    { nome: "Empada de Palmito",    desc: "Massa super amanteigada que derrete na boca, recheada com um creme de palmito bem temperado e pedaços macios",  preco: "R$14", img: "img/quiche.jpg" },
+
+  ],
+  "doces": [
+    { nome: "Brownie Chocolatudo",  desc: "Brownie intenso de chocolate amargo.",            preco: "R$12", img: "img/brownie.png" },
+    { nome: "Cheesecake Felino",  desc: "Cheesecake clássica com frutas vermelhas.",       preco: "R$15", img: "img/cheesecake.png" },
+    { nome: "Cookie de Patinhas",    desc: "Cookie crocante com gotas de chocolate.",         preco: "R$7",  img: "img/cookie.png" },
+    { nome: "Muffin de Mirtilo",  desc: "Muffin fofinho com mirtilos frescos.",            preco: "R$10", img: "img/muffin.png" },
+    { nome: "Petit Gatô", desc: "Um bolinho 'felino' de chocolate belga com interior derretido e caloroso, servido com uma bola de sorvete de baunilha.", preco: "R$8", img: "img/petit-gato.png"},
+  ]
+};
+
+const labels = {
+  "cafes-quentes": "Cafés Quentes",
+  "cafes-gelados": "Cafés Gelados",
+  "salgados":      "Salgados",
+  "doces":         "Doces"
+};
+
+let tabAtual = "todos";
+let buscaAtual = "";
+
+function getTodasCategorias() {
+  return Object.keys(cardapioData);
+}
+
+function criarCard(item) {
+  return `
+    <div class="menu-card">
+      <div class="menu-card-img">
+        <img src="${item.img}" alt="${item.nome}" onerror="this.style.display='none'">
+      </div>
+      <div class="menu-card-info">
+        <strong class="menu-card-nome">${item.nome}</strong>
+        <p class="menu-card-desc">${item.desc}</p>
+        <span class="menu-card-preco">${item.preco}</span>
+      </div>
+    </div>
+  `;
+}
+
+function criarSecao(cat, itens) {
+  const filtrados = buscaAtual
+    ? itens.filter(i => i.nome.toLowerCase().includes(buscaAtual) || i.desc.toLowerCase().includes(buscaAtual))
+    : itens;
+
+  if (filtrados.length === 0) return "";
+
+  return `
+    <div class="menu-secao">
+      <h3 class="menu-secao-titulo">${labels[cat]}</h3>
+      <div class="menu-carrossel-wrapper">
+        <button class="menu-arr menu-arr-left" onclick="scrollCarrossel(this, -1)" aria-label="anterior">&#8592;</button>
+        <div class="menu-carrossel">
+          ${filtrados.map(criarCard).join("")}
+        </div>
+        <button class="menu-arr menu-arr-right" onclick="scrollCarrossel(this, 1)" aria-label="próximo">&#8594;</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderCardapio() {
+  const container = document.getElementById("cardapio-conteudo");
+  const cats = tabAtual === "todos" ? getTodasCategorias() : [tabAtual];
+  const html = cats.map(cat => criarSecao(cat, cardapioData[cat])).join("");
+  container.innerHTML = html || "<p style='color:#9A6040;padding:1rem'>Nenhum item encontrado.</p>";
+}
+
+function showTab(tab, btn) {
+  tabAtual = tab;
+  document.querySelectorAll(".ctab").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  renderCardapio();
+}
+
+function filterItems(valor) {
+  buscaAtual = valor.toLowerCase().trim();
+  renderCardapio();
+}
+
+function scrollCarrossel(btn, direcao) {
+  const carrossel = btn.parentElement.querySelector(".menu-carrossel");
+  carrossel.scrollBy({ left: direcao * 280, behavior: "smooth" });
+}
+
+document.addEventListener("DOMContentLoaded", renderCardapio);
