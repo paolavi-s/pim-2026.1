@@ -1,19 +1,24 @@
+/* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
 
+
+/* Seletor universla, aplica em todos os elementos da página */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove espaçamentos internos padrão */
 }
 
+/* Define cores e tamanhos para usar em todo o site */
 :root {
-  --brown-nav:    #c7772d;
+  --brown-nav:    #c7772d; /* Cor da barra superior */
   --orange:       #e07820;
   --orange-light: #f5a030;
   --cream:        #fdf3e3;
   --text-dark:    #4a1e05;
   --text-mid:     #7b3b0c;
 
+/* Tamanhos de fonte reutilizáveis */
   --title-xl:   2.4rem;
   --title-lg:   1.8rem;
   --title-sm:   1.2rem;
@@ -21,28 +26,30 @@
   --body-md:    1rem;
   --body-sm:    0.875rem;
 
-  --color-heading: #87461C;
+/* Cores específicas para textos */
+  --color-heading: #87461C; 
   --color-subhead: #864C25;
   --color-body:    #000000;
 }
 
+/* Configurações básicas da página inteira */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-behavior: smooth; /* Rolagem suave ao clicar em links âncora */
+  scroll-padding-top: 70px; /* Espaço extra no topo ao rolar */
 }
 
 body {
-  background: #FFFCF8;
-  font-family: 'Nunito', sans-serif;
-  min-height: 100vh;
-  overflow-x: hidden;
+  background: #FFFCF8; /* Cor de fundo clara/bege */
+  font-family: 'Nunito', sans-serif; /* Fonte principal do site */
+  min-height: 100vh; /* Garante que o body ocupe toda a tela */
+  overflow-x: hidden; /* Evita barra de rolagem horizontal */
 }
 
-/* ─── TOPBAR ─────────────────────────────────────── */
+/* Barra de navegação superior (topbar) */
 .topbar {
-  position: fixed;
+  position: fixed; /* Fixa no topo da tela */
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 100; /* Fica acima de outros elementos */
   background-color: var(--brown-nav);
   height: 100px;
   display: flex;
@@ -65,19 +72,20 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2.5rem; /* Espaço entre os links */
 }
 
 .navbar a {
   color: #f5ddb0;
-  text-decoration: none;
+  text-decoration: none; /* Remove o sublinhado */
   font-weight: 600;
   font-size: var(--body-lg);
-  transition: color 0.2s;
+  transition: color 0.2s;  /* Animação suave ao passar o mouse */
 }
 
 .navbar a:hover { color: #fff; }
 
+/* Botão da topbar */
 .topbar button {
   background: var(--orange);
   color: #fff;
@@ -94,7 +102,7 @@ body {
 
 .topbar button:hover {
   background: #c45f0a;
-  transform: scale(1.04);
+  transform: scale(1.04);  /* Efeito de crescer um pouco */
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
@@ -103,11 +111,11 @@ body {
   transform: scale(0.96);
 }
 
-/* ─── MAIN ────────────────────────────────── */
-main { padding-top: 60px; }
+/* MAIN + HERO */
+main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar fixa */
 
 .hero {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px); /* Ocupa quase toda a tela */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +124,7 @@ main { padding-top: 60px; }
   box-sizing: border-box;
 }
 
+/* Texto do lado esquerdo do Hero */
 .hero-texto {
   flex: 1;
   text-align: center;
@@ -137,11 +146,17 @@ main { padding-top: 60px; }
   align-items: center;
 }
 
+<<<<<<< HEAD
 #inicio, #sobre, #cardapio, #adocao {
     scroll-margin-top: 50px;
+=======
+/* IDs das seções (usados para navegação) */
+#inicio, #sobre, #cardapio, #adocao{
+    scroll-margin-top: 80px; /* Espaço extra ao clicar no menu */
+>>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 }
 
-/* ─── CARROSSEL ─────────────────────────── */
+/* Carrossel de Imagens (HERO) */
 .hero-carrossel input[type="radio"] {
   display: none;
 }
@@ -152,22 +167,23 @@ main { padding-top: 60px; }
   border-radius: 24px;
   border: 10px solid var(--orange);
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 10; /* Mantém proporção 16:10 */
   max-width: 640px;
 }
 
+/* Funcionamento do carrossel */
 .carrossel-track {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease; /* Animação suave ao trocar slide */
 }
 
 .carrossel-track img {
   min-width: 100%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Imagem preenche o espaço */
   flex-shrink: 0;
 }
 
@@ -237,7 +253,7 @@ main { padding-top: 60px; }
   transform: scale(1.4);
 }
 
-/* ─── SOBRE NÓS ──────────────────────────────────── */
+/* Sobre Nós */
 .sobre-nos {
   max-width: 900px;
   margin: 60px auto;
@@ -249,7 +265,7 @@ main { padding-top: 60px; }
   font-family: 'Fredoka', cursive;
   font-size: var(--title-xl);
   color: var(--color-heading);
-  margin-bottom: -140px;
+  margin-bottom: -140px; /* Sobreposição intencional */
 }
 
 .sobre-nos h2 {
@@ -271,15 +287,16 @@ main { padding-top: 60px; }
   width: 394px;
   position: relative;
   z-index: 2;
-  margin-bottom: -158px;
+  margin-bottom: -158px;  /* Gato "saindo" da caixa */
 }
 
+/* Caixa laranja com texto */
 .sobre-conteudo {
   background: var(--orange);
   border-radius: 16px;
   padding: 20px 100px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
   gap: 20px;
   align-items: start;
   text-align: left;
@@ -295,9 +312,32 @@ main { padding-top: 60px; }
   line-height: 1.6;
 }
 
+<<<<<<< HEAD
 /* ─── VISITAS / REGRAS ───────────────────────────── */
 .visitas-section {
   margin-top: 80px;
+=======
+/* Regras */
+.regras-intro {
+  color: var(--color-body);
+  font-size: var(--body-lg);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  padding-top: 140px;
+}
+
+.regras-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 16px;
+}
+
+.card {
+  background: var(--orange-light);
+  border: 6px solid var(--orange);
+  border-radius: 16px;
+  padding: 20px;
+>>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
   text-align: center;
 }
 
@@ -368,6 +408,7 @@ main { padding-top: 60px; }
   line-height: 1.5;
 }
 
+<<<<<<< HEAD
 .visitas-cta {
   background: var(--orange);
   border-radius: 16px;
@@ -410,6 +451,9 @@ main { padding-top: 60px; }
 
 
 /* ─── ADOÇÃO ─────────────────────────────────────── */
+=======
+/* Adoção */
+>>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 .adocao {
   max-width: 1100px;
   width: 100%;
@@ -449,7 +493,7 @@ main { padding-top: 60px; }
 }
 
 .adocao-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px); /* Levanta o card */
   box-shadow: 0 12px 24px rgba(160, 82, 10, 0.2);
 }
 
@@ -502,12 +546,34 @@ main { padding-top: 60px; }
   transform: scale(1.03);
 }
 
+<<<<<<< HEAD
 /* ─── DEPOIMENTOS ─────────────────────────────────── */
 #depoimentos {
   background: #2a1010;
   padding: 60px 2rem 20px;
   display: flex;
   justify-content: center;
+=======
+/* Responsividade */
+
+/* Telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Empilha os elementos */
+    padding: 32px 24px;
+  }
+
+  .hero-texto { text-align: center; }
+
+  .hero-carrossel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .adocao-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+>>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 }
 
 /* ─── FEEDBACK ─────────────────────────────────────── */
@@ -518,6 +584,7 @@ main { padding-top: 60px; }
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .feedback-wrap {
   width: 100%;
   max-width: 960px;
@@ -697,9 +764,28 @@ textarea.dep-input { resize: none; height: 90px; }
 }
 
 /* ─── CONTATO ─────────────────────────────────────── */
+=======
+/* Telas muito pequenas (celulares) */
+@media (max-width: 520px) {
+  .topbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 1rem;
+    gap: 10px;
+  }
+
+  .navbar { gap: 1rem; }
+
+  .adocao-cards {
+    grid-template-columns: 1fr;  /* 1 card por linha */
+  }
+}
+
+/* Contato */
+>>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 #contato {
     padding: 80px 2rem;
-    background: #2a1010;
+    background: #2a1010; /* Fundo escuro */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1059,6 +1145,7 @@ textarea.dep-input { resize: none; height: 90px; }
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 520px) {
   .topbar {
     flex-wrap: wrap;
@@ -1072,4 +1159,132 @@ textarea.dep-input { resize: none; height: 90px; }
   .adocao-cards {
     grid-template-columns: 1fr;
   }
+=======
+/* Estatísticas */
+.estatisticas {
+    background: linear-gradient(135deg, #fff8f0, #ffe6cc);
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.estatisticas-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.estatisticas h2 {
+    font-family: 'Fredoka', cursive;
+    font-size: 2.6rem;
+    color: var(--color-heading);
+    margin-bottom: 12px;
+}
+
+.estatisticas-intro {
+    font-size: 1.2rem;
+    color: #5a2d00;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.estatisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 70px;
+}
+
+.estatistica-card {
+    background: white;
+    border: 6px solid var(--orange);
+    border-radius: 20px;
+    padding: 32px 20px;
+    transition: transform 0.3s;
+}
+
+.estatistica-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(160, 82, 10, 0.2);
+}
+
+.estatistica-icon {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.estatistica-number {
+    font-family: 'Fredoka', cursive;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    margin-bottom: 8px;
+}
+
+.estatistica-label {
+    font-size: 1.05rem;
+    color: #5a2d00;
+    font-weight: 600;
+}
+
+/* Gráfico de Idade em barras */
+.idade {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.idade h3 {
+    font-family: 'Fredoka', cursive;
+    color: var(--color-heading);
+    margin-bottom: 10px;
+}
+
+.idade-grafico {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    height: 220px
+}
+
+.idade-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.barra {
+    width: 70px;
+    background: var(--orange-light);
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    min-height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.barra:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: #c45f0a;
+    box-shadow: 0 10px 20px rgba(224, 120, 32, 0.35);
+}
+
+.barra span {
+    transition: transform 0.3s ease;
+}
+
+.barra:hover span {
+    transform: scale(1.15);
+}
+
+.idade-label {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #5a2d00;
+    font-size: 0.95rem;
+>>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 }
