@@ -30,6 +30,7 @@ const cardapioData = {
   ]
 };
 
+// Nomes para exibir no site
 const labels = {
   "cafes-quentes": "Cafés Quentes",
   "cafes-gelados": "Cafés Gelados",
@@ -37,13 +38,16 @@ const labels = {
   "doces":         "Doces"
 };
 
-let tabAtual = "todos";
-let buscaAtual = "";
+// Variáveis que guardam o que o usuário está vendo
+let tabAtual = "todos"; // Qual aba está ativa
+let buscaAtual = ""; // O que a pessoa digitou no campo de busca
 
+// Retorna todas as categorias disponíveis
 function getTodasCategorias() {
   return Object.keys(cardapioData);
 }
 
+// Cria o HTML de um único card de produto
 function criarCard(item) {
   return `
     <div class="menu-card">
@@ -59,6 +63,7 @@ function criarCard(item) {
   `;
 }
 
+// Cria uma seção inteira (título + carrossel)
 function criarSecao(cat, itens) {
   const filtrados = buscaAtual
     ? itens.filter(i => i.nome.toLowerCase().includes(buscaAtual) || i.desc.toLowerCase().includes(buscaAtual))
@@ -80,6 +85,7 @@ function criarSecao(cat, itens) {
   `;
 }
 
+// Renderiza todo o cardápio na tela
 function renderCardapio() {
   const container = document.getElementById("cardapio-conteudo");
   const cats = tabAtual === "todos" ? getTodasCategorias() : [tabAtual];
@@ -87,21 +93,25 @@ function renderCardapio() {
   container.innerHTML = html || "<p style='color:#9A6040;padding:1rem'>Nenhum item encontrado.</p>";
 }
 
+// Troca de aba
 function showTab(tab, btn) {
   tabAtual = tab;
-  document.querySelectorAll(".ctab").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll(".ctab").forEach(b => b.classList.remove("active")); // Remove "active" de todos os botões
+  btn.classList.add("active"); // Ativa o botão clicado
   renderCardapio();
 }
 
+// Filtra os itens conforme a busca
 function filterItems(valor) {
   buscaAtual = valor.toLowerCase().trim();
   renderCardapio();
 }
 
+// Rola o carrossel para a esquerda ou direita
 function scrollCarrossel(btn, direcao) {
   const carrossel = btn.parentElement.querySelector(".menu-carrossel");
   carrossel.scrollBy({ left: direcao * 280, behavior: "smooth" });
 }
 
+// Quando a página carregar, renderiza o cardápio pela primeira vez
 document.addEventListener("DOMContentLoaded", renderCardapio);
