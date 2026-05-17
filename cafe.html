@@ -18,9 +18,9 @@
             <a href="#sobre">Sobre nós</a>
             <a href="#cardapio">Cardápio</a>
             <a href="#adocao">Adoção</a>
-            <a href="#contato">Contato</a>
+            <a href="#contato">Mais informações</a>
         </nav>
-        <button>Reservar</button>
+        <button class="button" onclick="window.location.href='formulario.agendamento.html'">Reservar</button>
     </header>    
     
     <main id="inicio">
@@ -72,20 +72,50 @@
                 <p>Se você é um amante de gatos e adora passar um tempo com eles, este é o lugar perfeito! Mesmo que seu desejo não seja adotar, ainda é possível desfrutar da companhia dos nosso felinos agendando um horário. Está interessado? </p>
             </div>
         </div>
-        <h2>Regras</h2>
-        <p class="regras-intro">Nós lidamos com bichinhos todos os dias, por tanto é importante que saibamos respeitar o espaço pessoal deles. Por isso, criamos algumas regras:</p>
-        <div class="regras-cards">
-            <div class="card">
-                <h3>1. Sem Flash</h3>
-                <p>Não tire fotos com flash! Além de causar desconforto, luz forte é perigosa para os animais.</p>
+        <div class="visitas-section">
+            <h2 class="visitas-titulo">Como funcionam as visitas?</h2>
+            <p class="visitas-intro">Os gatos ficam em uma área separada da cafeteria por questões de higiene e conforto. Para visitar, é necessário agendamento prévio. Fique atento às regras — os animais, assim como nós, têm seus limites.</p>
+            <div class="regras-lista">
+                <div class="regra-item">
+                    <div class="regra-icone">📷</div>
+                    <div class="regra-texto">
+                        <strong>Sem flash</strong>
+                        <span>Os olhos dos bichanos são sensíveis — a luz forte pode prejudicar a visão deles.</span>
+                    </div>
+                </div>
+                <div class="regra-item">
+                    <div class="regra-icone">🍽️</div>
+                    <div class="regra-texto">
+                        <strong>Não os alimente</strong>
+                        <span>Eles têm dieta própria. Alimentos errados podem causar sobrepeso e problemas de saúde.</span>
+                    </div>
+                </div>
+                <div class="regra-item">
+                    <div class="regra-icone">😺</div>
+                    <div class="regra-texto">
+                        <strong>Brinque com cuidado</strong>
+                        <span>Evite movimentos bruscos ou brincadeiras que possam estressar os gatinhos.</span>
+                    </div>
+                </div>
+                <div class="regra-item">
+                    <div class="regra-icone">😻</div>
+                    <div class="regra-texto">
+                        <strong>Respeite o espaço deles</strong>
+                        <span>Só pegue no colo se eles virem até você primeiro. Deixe-os escolher a interação.</span>
+                    </div>
+                </div>
+                <div class="regra-item">
+                    <div class="regra-icone">👶</div>
+                    <div class="regra-texto">
+                        <strong>Crianças menores de 12 anos</strong>
+                        <span>Podem entrar apenas acompanhadas de um responsável.</span>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>2. Não os alimente</h3>
-                <p>Eles possuem sua própria comida e hora certa para isso. Não bagunce a dieta dos pequenos.</p>
-            </div>
-            <div class="card">
-                <h3>3. Tenha cuidado!</h3>
-                <p>Ao brincar com os gatos, é importante ser cuidadoso e entender sinais felinos para não ser ferido ou os irritarem.</p>
+
+            <div class="visitas-cta">
+                <p>Pronto para conhecer nossos gatinhos?</p>
+                <button onclick="window.location.href='formulario.agendamento.html'">Agende um horário!</button> <!--o deus me ajdue que nefocio insuportavel-->
             </div>
         </div>
     </section>
@@ -124,7 +154,6 @@
                     <p>Idade: 11 meses</p>
                     <p>Personalidade: Guloso</p>
                     <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                    
                 </div>
             </div>
             <div class="adocao-card">
@@ -136,7 +165,6 @@
                     <p>Idade: 3 meses</p>
                     <p>Personalidade: Preguiçosa</p>
                     <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                    
                 </div>
             </div>
             <div class="adocao-card">
@@ -148,7 +176,6 @@
                     <p>Idade: 12 anos</p>
                     <p>Personalidade: Carinhosa</p>
                     <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                    
                 </div>
             </div>
             <div class="adocao-card">
@@ -160,7 +187,6 @@
                     <p>Idade: 4 meses</p>
                     <p>Personalidade: Dorminhoca</p>
                     <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                    
                 </div>
             </div>
             <div class="adocao-card">
@@ -172,8 +198,6 @@
                     <p>Idade: 5 meses</p>
                     <p>Personalidade: Brincalhão</p>
                     <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                    
-
                 </div>
             </div>
             <div class="adocao-card">
@@ -185,6 +209,44 @@
                     <p>Idade: 3 anos</p>
                     <p>Personalidade: Sapeca</p>
                     <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section id="depoimentos">
+        <div class="feedback-wrap">
+            <h2 class="dep-titulo">O que nossos clientes dizem?</h2>
+            <p class="dep-subtitulo">Feedback de quem já visitou a Nekoffee</p>
+
+            <div class="dep-grid">
+                <div class="dep-card">
+                    <span class="dep-tag">Visita</span>
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-texto">Melhor cafeteria que já fui! O café é maravilhoso e os gatinhos são super carinhosos. O Valentino ficou no meu colo a tarde toda!</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar">MM</div>
+                        <div><p class="dep-name">Marisa Monte</p><p class="dep-date">12 mai 2026</p></div>
+                    </div>
+                </div>
+                <div class="dep-card">
+                    <span class="dep-tag">Adoção</span>
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-texto">Adotei um gatinho há 3 meses e não me arrependo! A equipe foi muito atenciosa. Recomendo demais!</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar">LJ</div>
+                        <div><p class="dep-name">Leonardo Jardim</p><p class="dep-date">3 abr 2026</p></div>
+                    </div>
+                </div>
+                <div class="dep-card">
+                    <span class="dep-tag">Cardápio</span>
+                    <div class="dep-stars">★★★★☆</div>
+                    <p class="dep-texto">O Milkshake de cafe é simplesmente incrível! Ambiente aconchegante e os bichinhos são muito bem cuidados.</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar">SC</div>
+                        <div><p class="dep-name">Sabrina Carpinteira</p><p class="dep-date">28 mar 2026</p></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -240,13 +302,12 @@
                         <a href="#" class="social-btn" aria-label="WhatsApp">w</a>
                     </div>
                 </div>
-
             </div>
 
             <!-- Lado direito formulário -->
             <div class="contato-form">
                 <h2>Deixe uma mensagem</h2>
-                <p class="contato-subtitulo">Deixe aqui embaixo seu feedback! •⩊•</p>
+                <p class="contato-subtitulo">Tem alguma dúvida ou quer falar com a gente? •⩊•</p>
 
                 <form>
                     <div class="contato-campo">
@@ -270,6 +331,17 @@
                         <textarea id="c-msg" placeholder="Escreva sua mensagem..."></textarea>
                     </div>
 
+                    <div class="contato-campo">
+                        <label>Avaliação</label>
+                        <div class="contato-stars" id="contato-star-pick">
+                            <span data-v="1">★</span>
+                            <span data-v="2">★</span>
+                            <span data-v="3">★</span>
+                            <span data-v="4">★</span>
+                            <span data-v="5">★</span>
+                        </div>
+                    </div>
+
                     <div class="contato-check">
                         <input type="checkbox" id="c-lgpd">
                         <label for="c-lgpd">
@@ -281,11 +353,10 @@
                 </form>
             </div>
 
-
-            
         </div>
     </section>
 
     <script src="js/cardapio.js"></script>
+
 </body>
 </html>

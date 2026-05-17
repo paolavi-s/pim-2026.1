@@ -10,23 +10,23 @@ const cardapioData = {
     { nome: "Cold Paw Brew",      desc: "Cold brew infusionado por 18 horas.",             preco: "R$14", img: "img/cold-paw-brew.png" },
     { nome: "Frappé Miado",       desc: "Frappé cremoso com caramelo e chantilly.",        preco: "R$16", img: "img/frappe-miado.png" },
     { nome: "Iced Matcha",        desc: "Matcha gelado com leite de aveia.",               preco: "R$15", img: "img/iced-matcha.png" },
-    { nome: "Milkshake de Café",  desc: "Milkshake artesanal sabor café intenso.",         preco: "R$13", img: "img/milkshake.png" },
-    { nome: "Chá Gelado",         desc: "Chá da casa refrescante com limão e hortelã.",    preco: "R$10", img: "img/cha.jpeg" },
+    { nome: "Milkshake de Café",  desc: "Milkshake artesanal sabor café intenso.",         preco: "R$13", img: "img/milkshake.jpeg" },
+    { nome: "Chá Gelado",         desc: "Chá da casa refrescante com limão e hortelã.",    preco: "R$10", img: "img/cha-gelado.jpeg" },
   ],
   "salgados": [
-    { nome: "Croissant de Queijo", desc: "Croissant folhado com queijo derretido.",        preco: "R$9",  img: "img/croissant.png" },
-    { nome: "Pão de Queijo",       desc: "Clássico brasileiro fresquinho e crocante.",     preco: "R$5",  img: "img/pao-de-queijo.png" },
-    { nome: "Sanduba do Chef",     desc: "Sanduíche de frango com pesto e rúcula.",        preco: "R$22", img: "img/sanduba.jpg" },
-    { nome: "Quiche Espinafre",    desc: "Quiche cremosa com espinafre e ricota.",         preco: "R$18", img: "img/quiche.jpg" },
-    { nome: "Empada de Palmito",    desc: "Massa super amanteigada que derrete na boca, recheada com um creme de palmito bem temperado e pedaços macios",  preco: "R$14", img: "img/quiche.jpg" },
+    { nome: "Croissant de Queijo", desc: "Croissant folhado com queijo derretido.",        preco: "R$9",  img: "img/croissant-queijo.jpeg" },
+    { nome: "Pão de Queijo",       desc: "Clássico brasileiro fresquinho e crocante.",     preco: "R$5",  img: "img/pao-queijo.jpeg" },
+    { nome: "Sanduba do Chef",     desc: "Sanduíche de frango com pesto e rúcula.",        preco: "R$22", img: "img/sanduba.jpeg" },
+    { nome: "Quiche Espinafre",    desc: "Quiche cremosa com espinafre e ricota.",         preco: "R$18", img: "img/quiche.jpeg" },
+    { nome: "Empada de Palmito",    desc: "Massa super amanteigada que derrete na boca, recheada com um creme de palmito bem temperado e pedaços macios",  preco: "R$14", img: "img/empada-palmito.jpeg" },
 
   ],
   "doces": [
-    { nome: "Brownie Chocolatudo",  desc: "Brownie intenso de chocolate amargo.",            preco: "R$12", img: "img/brownie.png" },
-    { nome: "Cheesecake Felino",  desc: "Cheesecake clássica com frutas vermelhas.",       preco: "R$15", img: "img/cheesecake.png" },
-    { nome: "Cookie de Patinhas",    desc: "Cookie crocante com gotas de chocolate.",         preco: "R$7",  img: "img/cookie.png" },
-    { nome: "Muffin de Mirtilo",  desc: "Muffin fofinho com mirtilos frescos.",            preco: "R$10", img: "img/muffin.png" },
-    { nome: "Petit Gatô", desc: "Um bolinho 'felino' de chocolate belga com interior derretido e caloroso, servido com uma bola de sorvete de baunilha.", preco: "R$8", img: "img/petit-gato.png"},
+    { nome: "Brownie Chocolatudo",  desc: "Brownie intenso de chocolate amargo.",            preco: "R$12", img: "img/brownie.jpeg" },
+    { nome: "Cheesecake Felino",  desc: "Cheesecake clássica com frutas vermelhas.",       preco: "R$15", img: "img/cheesecake.jpeg" },
+    { nome: "Cookie de Patinhas",    desc: "Cookie crocante com gotas de chocolate.",         preco: "R$7",  img: "img/cookie.jpeg" },
+    { nome: "Muffin de Mirtilo",  desc: "Muffin fofinho com mirtilos frescos.",            preco: "R$10", img: "img/muffin.jpeg" },
+    { nome: "Petit Gatô", desc: "Um bolinho 'felino' de chocolate belga com interior derretido e caloroso, servido com uma bola de sorvete de baunilha.", preco: "R$8", img: "img/petit-gato.jpeg"},
   ]
 };
 
@@ -92,7 +92,7 @@ function showTab(tab, btn) {
   document.querySelectorAll(".ctab").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
   renderCardapio();
-}
+} //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 function filterItems(valor) {
   buscaAtual = valor.toLowerCase().trim();
@@ -105,3 +105,21 @@ function scrollCarrossel(btn, direcao) {
 }
 
 document.addEventListener("DOMContentLoaded", renderCardapio);
+// Estrelas do formulário de contato pqp como faz isso
+        const stars = document.querySelectorAll('#contato-star-pick span');
+        let selectedRating = 0;
+ 
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const val = +star.dataset.v;
+                stars.forEach(s => s.classList.toggle('ativo', +s.dataset.v <= val));
+            });
+            star.addEventListener('mouseout', () => {
+                stars.forEach(s => s.classList.toggle('ativo', +s.dataset.v <= selectedRating));
+            });
+            star.addEventListener('click', () => {
+                selectedRating = +star.dataset.v;
+                stars.forEach(s => s.classList.toggle('ativo', +s.dataset.v <= selectedRating));
+            });
+        });
+
