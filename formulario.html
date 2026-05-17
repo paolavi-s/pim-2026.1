@@ -4,34 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Cadastro</title>
-  <style> /* Estilos Gerais */
-
-    /* Aplica em todos os elementos */
+  <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-                            /* Inclui padding e border
-                            na largura total */
+
     body {
-      background: #f5f0eb; /* Cor de fundo bege suave */
-      font-family: 'Lato', sans-serif; /* Fonte principal */
+      background: #f5f0eb;
+      font-family: 'Lato', sans-serif;
       color: #1a1a1a;
-      min-height: 100vh; /* Garante que ocupe toda a tela */
+      min-height: 100vh;
       padding: 2rem 1rem;
     }
 
-    /* Container central do formulário */
     .form-wrap {
-      max-width: 620px; /* Largura máxima */
-      margin: 0 auto; /* Centraliza na tela */
+      max-width: 620px;
+      margin: 0 auto;
     }
 
-    /* Cabeçalho do formulário */
     .form-header {
-      border-left: 4px solid #7b3b0c; /* Faixa laranja à esquerda */
+      border-left: 4px solid #7b3b0c;
       padding-left: 1rem;
       margin-bottom: 2rem;
     }
     .form-header h1 {
-      font-family: 'Playfair Display', serif; /* Fonte elegante para títulos */
+      font-family: 'Playfair Display', serif;
       font-size: 32px;
       font-weight: 600;
       color: #4a1e05;
@@ -42,7 +37,6 @@
       color: #666;
     }
 
-    /* Cards das seções (Dados Pessoais e Questionário) */
     .section-card {
       background: #fff;
       border: 1px solid #e0d5cc;
@@ -63,14 +57,13 @@
     }
     .section-title i { font-size: 18px; }
 
-    /* Campos do Formulário */
     .field-row {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Duas colunas */
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 12px;
     }
-    .field-row.full { grid-template-columns: 1fr; } /* Uma coluna só */
+    .field-row.full { grid-template-columns: 1fr; }
 
     .field {
       display: flex;
@@ -81,7 +74,7 @@
       font-size: 12px;
       font-weight: 700;
       color: #888;
-      text-transform: uppercase; /* Deixa em maiúsculas */
+      text-transform: uppercase;
       letter-spacing: 0.06em;
     }
     .field input,
@@ -94,21 +87,21 @@
       border: 1px solid #d0c4b8;
       background: #faf7f5;
       color: #1a1a1a;
-      outline: none; /* Remove contorno azul padrão */
+      outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
     .field input:focus,
     .field select:focus,
     .field textarea:focus {
-      border-color: #7b3b0c; /* Laranja escuro */
-      box-shadow: 0 0 0 3px rgba(123, 59, 12, 0.12); /* Sombra */
+      border-color: #7b3b0c;
+      box-shadow: 0 0 0 3px rgba(123, 59, 12, 0.12);
     }
     .field textarea {
       resize: vertical;
       min-height: 80px;
     }
 
-    /* Perguntas do Questionário */
+    /* Questionário */
     .q-item { margin-bottom: 1.25rem; }
     .q-label {
       font-size: 14px;
@@ -122,8 +115,6 @@
       flex-direction: column;
       gap: 8px;
     }
-
-    /* Cada opção parece um card clicável */
     .q-option {
       display: flex;
       align-items: center;
@@ -143,14 +134,14 @@
     }
     .q-option input[type="radio"],
     .q-option input[type="checkbox"] {
-      accent-color: #7b3b0c; /* Cor do radio/checkbox */
+      accent-color: #7b3b0c;
       width: 16px;
       height: 16px;
       flex-shrink: 0;
     }
 
 
-    /* Botão de Enviar */
+    /* Botão */
     .submit-btn {
       width: 100%;
       padding: 14px;
@@ -175,7 +166,7 @@
 
     /* Mensagem de sucesso */
     .success-msg {
-      display: none; /* Escondido inicialmente */
+      display: none;
       text-align: center;
       padding: 3rem 2rem;
       background: #fff;
@@ -201,7 +192,7 @@
     }
 
     @media (max-width: 500px) {
-      .field-row { grid-template-columns: 1fr; } /* Empilha os campos */
+      .field-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -214,7 +205,6 @@
       <p>Preencha seus dados e responda o questionário abaixo</p>
     </div>
 
-    <!-- Formulário Principal-->
     <div id="main-form">
 
       <!-- Dados Pessoais -->
@@ -309,7 +299,6 @@
         </div>
       </div>
 
-          <!-- Botão de envio -->
       <button class="submit-btn" onclick="handleSubmit()">
         <i class="ti ti-send"></i> Enviar cadastro
       </button>
@@ -325,15 +314,12 @@
 
   </div>
 
-<!-- JavaScript -->
   <script>
-    // Máscara automática do CPF
+    // Máscara do CPF
     const cpfInput = document.getElementById('cpf');
     cpfInput.addEventListener('input', () => {
-      let v = cpfInput.value.replace(/\D/g, ''); // Remove tudo que não é número
+      let v = cpfInput.value.replace(/\D/g, '');
       if (v.length > 11) v = v.slice(0, 11);
-
-      // Aplica a formatação xxx.xxx.xxx-xx
       if (v.length > 9) v = v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6,9)+'-'+v.slice(9);
       else if (v.length > 6) v = v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6);
       else if (v.length > 3) v = v.slice(0,3)+'.'+v.slice(3);
@@ -343,8 +329,8 @@
 
     // Envio do formulário
     function handleSubmit() {
-      document.getElementById('main-form').style.display = 'none'; // Esconde o formulário
-      document.getElementById('success').style.display = 'block'; // Mostra a mensagem de sucesso
+      document.getElementById('main-form').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
     }
   </script>
 

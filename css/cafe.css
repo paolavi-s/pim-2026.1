@@ -1,8 +1,7 @@
 /* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
 
-
-/* Seletor universla, aplica em todos os elementos da página */
+/* Seletor universal, aplica em todos os elementos da página */
 * {
   box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura */
   margin: 0; /* Remove margens padrão */
@@ -11,14 +10,14 @@
 
 /* Define cores e tamanhos para usar em todo o site */
 :root {
-  --brown-nav:    #c7772d; /* Cor da barra superior */
+  --brown-nav:     #c7772d; /* Cor da barra superior */
   --orange:       #e07820;
   --orange-light: #f5a030;
   --cream:        #fdf3e3;
   --text-dark:    #4a1e05;
   --text-mid:     #7b3b0c;
 
-/* Tamanhos de fonte reutilizáveis */
+  /* Tamanhos de fonte reutilizáveis */
   --title-xl:   2.4rem;
   --title-lg:   1.8rem;
   --title-sm:   1.2rem;
@@ -26,7 +25,7 @@
   --body-md:    1rem;
   --body-sm:    0.875rem;
 
-/* Cores específicas para textos */
+  /* Cores específicas para textos */
   --color-heading: #87461C; 
   --color-subhead: #864C25;
   --color-body:    #000000;
@@ -43,6 +42,11 @@ body {
   font-family: 'Nunito', sans-serif; /* Fonte principal do site */
   min-height: 100vh; /* Garante que o body ocupe toda a tela */
   overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+/* IDs das seções (usados para navegação) */
+#inicio, #sobre, #cardapio, #adocao {
+  scroll-margin-top: 80px; /* Espaço extra ao clicar no menu */
 }
 
 /* Barra de navegação superior (topbar) */
@@ -144,16 +148,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   font-weight: 600;
   line-height: 1.4;
   align-items: center;
-}
-
-<<<<<<< HEAD
-#inicio, #sobre, #cardapio, #adocao {
-    scroll-margin-top: 50px;
-=======
-/* IDs das seções (usados para navegação) */
-#inicio, #sobre, #cardapio, #adocao{
-    scroll-margin-top: 80px; /* Espaço extra ao clicar no menu */
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 }
 
 /* Carrossel de Imagens (HERO) */
@@ -272,7 +266,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   font-family: 'Fredoka', cursive;
   font-size: var(--title-xl);
   color: var(--color-heading);
-
 }
 
 .sobre-wrapper {
@@ -312,12 +305,11 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   line-height: 1.6;
 }
 
-<<<<<<< HEAD
 /* ─── VISITAS / REGRAS ───────────────────────────── */
 .visitas-section {
   margin-top: 80px;
-=======
-/* Regras */
+}
+
 .regras-intro {
   color: var(--color-body);
   font-size: var(--body-lg);
@@ -337,7 +329,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   border: 6px solid var(--orange);
   border-radius: 16px;
   padding: 20px;
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
   text-align: center;
 }
 
@@ -408,7 +399,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   line-height: 1.5;
 }
 
-<<<<<<< HEAD
 .visitas-cta {
   background: var(--orange);
   border-radius: 16px;
@@ -448,12 +438,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   transform: scale(1.04);
 }
 
-
-
 /* ─── ADOÇÃO ─────────────────────────────────────── */
-=======
-/* Adoção */
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 .adocao {
   max-width: 1100px;
   width: 100%;
@@ -493,7 +478,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
 }
 
 .adocao-card:hover {
-  transform: translateY(-6px); /* Levanta o card */
+  transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(160, 82, 10, 0.2);
 }
 
@@ -546,37 +531,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   transform: scale(1.03);
 }
 
-<<<<<<< HEAD
-/* ─── DEPOIMENTOS ─────────────────────────────────── */
-#depoimentos {
-  background: #2a1010;
-  padding: 60px 2rem 20px;
-  display: flex;
-  justify-content: center;
-=======
-/* Responsividade */
-
-/* Telas menores que 768px (tablets e celulares) */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column; /* Empilha os elementos */
-    padding: 32px 24px;
-  }
-
-  .hero-texto { text-align: center; }
-
-  .hero-carrossel {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .adocao-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
-}
-
-/* ─── FEEDBACK ─────────────────────────────────────── */
+/* ─── FEEDBACK & DEPOIMENTOS ───────────────────────── */
 #feedback {
   background: #2a1010;
   padding: 60px 2rem 40px;
@@ -584,7 +539,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   justify-content: center;
 }
 
-<<<<<<< HEAD
 .feedback-wrap {
   width: 100%;
   max-width: 960px;
@@ -764,28 +718,9 @@ textarea.dep-input { resize: none; height: 90px; }
 }
 
 /* ─── CONTATO ─────────────────────────────────────── */
-=======
-/* Telas muito pequenas (celulares) */
-@media (max-width: 520px) {
-  .topbar {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 12px 1rem;
-    gap: 10px;
-  }
-
-  .navbar { gap: 1rem; }
-
-  .adocao-cards {
-    grid-template-columns: 1fr;  /* 1 card por linha */
-  }
-}
-
-/* Contato */
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
 #contato {
     padding: 80px 2rem;
-    background: #2a1010; /* Fundo escuro */
+    background: #2a1010;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1083,9 +1018,8 @@ textarea.dep-input { resize: none; height: 90px; }
 
 #contato .contato-enviar:active {
     transform: scale(0.98);
-} /*mil linhas nem ferrabdie* eu deveraia rer seo\adai rydi/
+}
 
-/* ─── ESTRELAS NO FORM DE CONTATO ─── */
 .contato-stars {
     display: flex;
     gap: 6px;
@@ -1106,61 +1040,7 @@ textarea.dep-input { resize: none; height: 90px; }
     transform: scale(1.15);
 }
 
-/* ─── RESPONSIVIDADE ─────────────────────────────── */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 32px 24px;
-  }
-
-  .hero-texto { text-align: center; }
-
-  .hero-carrossel {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .adocao-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .dep-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 700px) {
-    #contato .contato-wrap {
-        grid-template-columns: 1fr;
-        border-radius: 0;
-    }
-    #contato .contato-form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 701px) and (max-width: 960px) {
-    .dep-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-<<<<<<< HEAD
-@media (max-width: 520px) {
-  .topbar {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 12px 1rem;
-    gap: 10px;
-  }
-
-  .navbar { gap: 1rem; }
-
-  .adocao-cards {
-    grid-template-columns: 1fr;
-  }
-=======
-/* Estatísticas */
+/* ─── ESTATÍSTICAS ─────────────────────────────────── */
 .estatisticas {
     background: linear-gradient(135deg, #fff8f0, #ffe6cc);
     padding: 80px 24px;
@@ -1243,7 +1123,7 @@ textarea.dep-input { resize: none; height: 90px; }
     justify-content: center;
     align-items: flex-end;
     gap: 30px;
-    height: 220px
+    height: 220px;
 }
 
 .idade-item {
@@ -1286,5 +1166,66 @@ textarea.dep-input { resize: none; height: 90px; }
     font-weight: 600;
     color: #5a2d00;
     font-size: 0.95rem;
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
+}
+
+/* ─── RESPONSIVIDADE (MEDIA QUERIES) ─────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 32px 24px;
+  }
+
+  .hero-texto { text-align: center; }
+
+  .hero-carrossel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .adocao-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dep-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+    #contato .contato-wrap {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+    #contato .contato-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 960px) {
+    .dep-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 1rem;
+    gap: 10px;
+  }
+
+  .navbar { gap: 1rem; }
+
+  .adocao-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── DEPOIMENTOS ─────────────────────────────────── */
+#depoimentos {
+  background: #2a1010;
+  padding: 60px 2rem 20px;
+  display: flex;
+  justify-content: center;
 }

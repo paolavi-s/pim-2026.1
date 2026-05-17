@@ -113,7 +113,6 @@ function scrollCarrossel(btn, direcao) {
   carrossel.scrollBy({ left: direcao * 280, behavior: "smooth" });
 }
 
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", renderCardapio);
 // Estrelas do formulário de contato pqp como faz isso
         const stars = document.querySelectorAll('#contato-star-pick span');
@@ -133,7 +132,5 @@ document.addEventListener("DOMContentLoaded", renderCardapio);
             });
         });
 
-=======
 // Quando a página carregar, renderiza o cardápio pela primeira vez
 document.addEventListener("DOMContentLoaded", renderCardapio);
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73

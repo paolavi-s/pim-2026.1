@@ -9,42 +9,29 @@
 </head>
 <body>
 
-    <!-- Cabeçalho/Topbar -->
     <header class="topbar">
-        <div class="brand"> <!-- Logo da marca -->
-            <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="logo-img">
+        <div class="brand"> <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="logo-img">
         </div>
-        <nav class="navbar"> <!-- Menu de navegação -->
-            <a href="#inicio">Início</a>
+        <nav class="navbar"> <a href="#inicio">Início</a>
             <a href="#sobre">Sobre nós</a>
             <a href="#cardapio">Cardápio</a>
             <a href="#adocao">Adoção</a>
             <a href="#contato">Mais informações</a>
         </nav>
-<<<<<<< HEAD
         <button class="button" onclick="window.location.href='formulario.agendamento.html'">Reservar</button>
-=======
-        <button>Reservar</button> <!-- Botão de ação -->
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
     </header>    
 
-    <!-- Contéúdo principal / MAIN -->
     <main id="inicio">
-        <div class="hero"> <!-- Seção Hero (parte de cima com texto + carrossel) -->
-            <div class="hero-texto"> <!-- Texto do lado esquerdo -->
-                <h1>Seja bem-vindo à Gafeteria Nekoffee!</h1>
+        <div class="hero"> <div class="hero-texto"> <h1>Seja bem-vindo à Gateferia Nekoffee!</h1>
                 <h2>O lugar perfeito para um café e um cafuné</h2>
             </div>
 
-            <!-- Carrossel de imagens -->
             <div class="hero-carrossel">
-                <!-- Botões invisíveis que controlam o carrossel (técnica CSS pura) -->
                 <input type="radio" name="slide" id="s1" checked>
                 <input type="radio" name="slide" id="s2">
                 <input type="radio" name="slide" id="s3">
                 <input type="radio" name="slide" id="s4">
 
-                <!-- Pista com as imagens -->
                 <div class="carrossel-track">
                     <img src="img/homeowpage.jpg" alt="Gato laranja fofinho">
                     <img src="img/Meowtcha.png"    alt="Prato do cardápio">
@@ -52,19 +39,16 @@
                     <img src="img/area-gatos.png" alt="Área dos gatos">
                 </div>
 
-                <!-- Botões de anterior -->
                 <label class="carrossel-btn prev p1" for="s4">&#8592;</label>
                 <label class="carrossel-btn prev p2" for="s1">&#8592;</label>
                 <label class="carrossel-btn prev p3" for="s2">&#8592;</label>
                 <label class="carrossel-btn prev p4" for="s3">&#8592;</label>
 
-                <!-- Botões de próximo -->
                 <label class="carrossel-btn next n1" for="s2">&#8594;</label>
                 <label class="carrossel-btn next n2" for="s3">&#8594;</label>
                 <label class="carrossel-btn next n3" for="s4">&#8594;</label>
                 <label class="carrossel-btn next n4" for="s1">&#8594;</label>
 
-                <!-- Pontinhos de navegação (dots) -->
                 <div class="carrossel-dots">
                     <label for="s1" class="dot d1"></label>
                     <label for="s2" class="dot d2"></label>
@@ -75,13 +59,10 @@
         </div>
     </main>
 
-    <!-- Sobre Nós -->
     <section id="sobre" class="sobre-nos">
         <h2>Sobre nós</h2>
         <div class="sobre-wrapper">
-            <img src="img/gato-about-us.jpeg" alt="Gato curioso" class="sobre-gato">  <!-- Imagem do gato sobreposta -->
-            <div class="sobre-conteudo"> <!-- Caixa laranja com texto -->
-                <p>A cafeteria Nekoffee é um estabelecimento com foco em gatos. Funcionamos como uma cafeteria normal, porém focamos no resgate de animais em situação de rua e os ajudamos a encontrar um lar para viverem felizes. Incentivamos a adoção responsável.</p>
+            <img src="img/gato-about-us.jpeg" alt="Gato curioso" class="sobre-gato">  <div class="sobre-conteudo"> <p>A cafeteria Nekoffee é um estabelecimento com foco em gatos. Funcionamos como uma cafeteria normal, porém focamos no resgate de animais em situação de rua e os ajudamos a encontrar um lar para viverem felizes. Incentivamos a adoção responsável.</p>
                 <p>Se você é um amante de gatos e adora passar um tempo com eles, este é o lugar perfeito! Mesmo que seu desejo não seja adotar, ainda é possível desfrutar da companhia dos nosso felinos agendando um horário. Está interessado? </p>
             </div>
         </div>
@@ -89,6 +70,7 @@
         <div class="visitas-section">
             <h2 class="visitas-titulo">Como funcionam as visitas?</h2>
             <p class="visitas-intro">Os gatos ficam em uma área separada da cafeteria por questões de higiene e conforto. Para visitar, é necessário agendamento prévio. Fique atento às regras — os animais, assim como nós, têm seus limites.</p>
+            
             <div class="regras-lista">
                 <div class="regra-item">
                     <div class="regra-icone">📷</div>
@@ -125,30 +107,20 @@
                         <span>Podem entrar apenas acompanhadas de um responsável.</span>
                     </div>
                 </div>
-
-        <!-- Regras -->
-        <h2>Regras</h2>
-        <p class="regras-intro">Nós lidamos com bichinhos todos os dias, por tanto é importante que saibamos respeitar o espaço pessoal deles. Por isso, criamos algumas regras:</p>
-        <div class="regras-cards">
-            <div class="card">
-                <h3>1. Sem Flash</h3>
-                <p>Não tire fotos com flash! Além de causar desconforto, luz forte é perigosa para os animais.</p>
             </div>
 
             <div class="visitas-cta">
                 <p>Pronto para conhecer nossos gatinhos?</p>
-                <button onclick="window.location.href='formulario.agendamento.html'">Agende um horário!</button> <!--o deus me ajdue que nefocio insuportavel-->
+                <button onclick="window.location.href='formulario.agendamento.html'">Agende um horário!</button> 
             </div>
         </div>
     </section>
 
-    <!-- Cardápio -->
     <section id="cardapio" class="menu">
         <div class="cardapio-wrap">
             <div class="cardapio-header">
                 <h2>Cardápio</h2>
-                <div class="cardapio-botoes"> <!-- Botões de filtro de categorias -->
-                    <button class="ctab active" onclick="showTab('todos', this)">Todos</button>
+                <div class="cardapio-botoes"> <button class="ctab active" onclick="showTab('todos', this)">Todos</button>
                     <button class="ctab" onclick="showTab('cafes-quentes', this)">Cafés quentes</button>
                     <button class="ctab" onclick="showTab('cafes-gelados', this)">Cafés gelados</button>
                     <button class="ctab" onclick="showTab('salgados', this)">Salgados</button>
@@ -156,15 +128,12 @@
                 </div>
             </div>
             <div class="cardapio-body">
-                <div class="cardapio-search"> <!-- Campo de busca -->
-                    <input type="text" placeholder="Buscar no cardápio..." oninput="filterItems(this.value)" id="search" />
+                <div class="cardapio-search"> <input type="text" placeholder="Buscar no cardápio..." oninput="filterItems(this.value)" id="search" />
                 </div>
-                <div id="cardapio-conteudo"></div> <!-- Área onde os itens do cardápio serão carregados via JavaScript -->
-            </div>
+                <div id="cardapio-conteudo"></div> </div>
         </div>
     </section>
 
-    <!-- Adoção -->
     <section id="adocao" class="adocao">
         <h2>Adoção</h2>
         <p class="adocao-intro">Esses são nossos gatinhos que estão precisando de um lar. Vamos conhecer eles?</p>
@@ -238,8 +207,69 @@
         </div>
     </section>
 
-<<<<<<< HEAD
-    <!-- ===== DEPOIMENTOS ===== -->
+    
+
+    <section id="estatisticas" class="estatisticas">
+        <div class="estatisticas-container">
+            <h2>Nossos Números</h2>
+            <p class="estatisticas-intro">Desde a inauguração, a Nekoffee já impactou positivamente a vida de muitas pessoas e gatinhos! ❤️</p>
+            <div class="estatisticas-grid">
+                <div class="estatistica-card"> <div class="estatistica-icon">👨‍👩‍👧‍👦</div>
+                    <div class="estatistica-numero" data-target="8793">8.793</div>
+                    <div class="estatistica-label">Pessoas já visitaram a Gateferia</div>
+                </div>
+                <div class="estatistica-card">
+                    <div class="estatistica-icon">🐱</div>
+                    <div class="estatistica-numero" data-target="157">157</div>
+                    <div class="estatistica-label">Gatinhos adotados</div>
+                </div>
+                <div class="estatistica-card">
+                    <div class="estatistica-icon">😁</div>
+                    <div class="estatistica-numero" data-target="96">96%</div>
+                    <div class="estatistica-label">Se sentiram mais felizes após visitar</div>
+                </div>
+                <div class="estatistica-card">
+                    <div class="estatistica-icon">🙌</div>
+                    <div class="estatistica-numero" data-target="73">73%</div>
+                    <div class="estatistica-label">Relataram redução de estresse, ansiedade e solidão após frequentar a gateferia</div>
+                </div>
+            </div>
+            <div class="idade">
+                <h3>Idade do nosso público</h3>
+
+                <div class="idade-grafico"> <div class="idade-item"> 
+                        <div class="barra" style="height: 38%;">
+                            <span>38%</span>
+                        </div>
+                        <span class="idade-label">18 - 25 anos</span>
+                    </div>
+
+                    <div class="idade-item">
+                        <div class="barra" style="height: 45%;">
+                            <span>45%</span>
+                        </div>
+                        <span class="idade-label">26 - 35 anos</span>
+                    </div>
+
+                    <div class="idade-item">
+                        <div class="barra" style="height: 14%;">
+                            <span>14%</span>
+                        </div>
+                        <span class="idade-label">36 - 45 anos</span>
+                    </div>
+
+                    <div class="idade-item">
+                        <div class="barra" style="height: 3%;">
+                            <span>3%</span>
+                        </div>
+                        <span class="idade-label">+46 anos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="depoimentos">
         <div class="feedback-wrap">
             <h2 class="dep-titulo">O que nossos clientes dizem?</h2>
@@ -277,84 +307,14 @@
         </div>
     </section>
 
-    <!-- ==================== CONTATO ==================== -->
-=======
-    <!-- Estatísticas -->
-	<section id="estatisticas" class="estatisticas">
-		<div class ="estatisticas-container">
-			<h2>Nossos Números</h2>
-			<p class="estatisticas-intro"Desde="" a="" inauguração="", a="" Nekoffee="" já="" impactou="" positivamente="" a="" vida="" de="" muitas="" pessoas="" e="" gatos=""! :D="" ❤️=""></p>
-			<div class="estatisticas-grid">
-				<div class="estatistica-card"> <!-- Cards de estatísticas -->
-					<div class="estatistica-icon">👨‍👩‍👧‍👦</div>
-					<div class="estatistica-numero" data-target="8793">8.793</div>
-					<div class="estatistica-label">Pessoas já visitaram a Gateferia</div>
-				</div>
-				<div class="estatistica-card">
-					<div class="estatistica-icon">🐱</div>
-					<div class="estatistica-numero" data-target="157">157</div>
-					<div class="estatistica-label">Gatinhos adotados</div>
-				</div>
-				<div class="estatistica-card">
-					<div class="estatistica-icon">😁</div>
-					<div class="estatistica-numero" data-target="96">96%</div>
-					<div class="estatistica-label">Se sentiram mais felizes após visitar</div>
-				</div>
-				<div class="estatistica-card">
-					<div class="estatistica-icon">🙌</div>
-					<div class="estatistica-numero" data-target="73">73%</div>
-					<div class="estatistica-label">Relataram redução de estresse, ansiedade e solidão após frequentar a gateferia</div>
-				</div>
-			</div>
-            <div class="idade">
-                <h3>Idade do nosso público</h3>
-
-                <div class="idade-grafico"> <!-- Gráfico de idade -->
-                    <div class="idade-item"> <!-- Gráfico de idade -->
-                        <div class="barra" style="height: 38%;">
-                            <span>38%</span>
-                        </div>
-                        <span class="idade-label">18 - 25 anos</span>
-                    </div>
-
-                    <div class="idade-item">
-                        <div class="barra" style="height: 45%;">
-                            <span>45%</span>
-                        </div>
-                        <span class="idade-label">26 - 35 anos</span>
-                    </div>
-
-                    <div class="idade-item">
-                        <div class="barra" style="height: 14%;">
-                            <span>14%</span>
-                        </div>
-                        <span class="idade-label">36 - 45 anos</span>
-                    </div>
-
-                    <div class="idade-item">
-                        <div class="barra" style="height: 3%;">
-                            <span>3%</span>
-                        </div>
-                        <span class="idade-label">+46 anos</span>
-                    </div>
-
-                </div>
-            </div>
-		</div>
-	</section>
-
-    <!-- Contato -->
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
     <section id="contato">
         <div class="contato-wrap">
-            <!-- Coluna esquerda: Informações -->
             <div class="contato-info">
                 <div>
                     <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="contato-logo-img">
                 </div>
                 <hr class="contato-divider">
 
-                <!-- Contatos -->
                 <div class="contato-itens">
                     <div class="contato-item"> 
                         <span class="contato-icone">✉</span>
@@ -381,8 +341,7 @@
                     </div>
                 </div>
                 <hr class="contato-divider">
-                <div class="contato-redes"> <!-- Redes sociais -->
-                    <span class="contato-label">Redes sociais</span>
+                <div class="contato-redes"> <span class="contato-label">Redes sociais</span>
                     <div class="contato-social">
                         <a href="#" class="social-btn" aria-label="Facebook">f</a>
                         <a href="#" class="social-btn" aria-label="Instagram">in</a>
@@ -391,13 +350,11 @@
                 </div>
             </div>
 
-            <!-- Coluna direita: Formulário -->
             <div class="contato-form">
                 <h2>Deixe uma mensagem</h2>
                 <p class="contato-subtitulo">Tem alguma dúvida ou quer falar com a gente? •⩊•</p>
 
-                <form> <!-- Campos do formulário -->
-                    <div class="contato-campo">
+                <form> <div class="contato-campo">
                         <label for="c-nome">Nome</label>
                         <input type="text" id="c-nome" placeholder="Seu nome completo">
                     </div>
@@ -441,15 +398,10 @@
             </div>
 
         </div>
+        
     </section>
 
-<<<<<<< HEAD
-    <script src="js/cardapio.js"></script>
-
-=======
-    <!-- JavaScript -->
-    <script src="js/cardapio.js"></script> <!-- Carrega o arquivo que controla o cardápio -->
-    <script src="js/estatisticas.js"></script> <!-- Carrega o arquivo que controla as animações das estatísticas -->
->>>>>>> 100e1fd91234c0f877c923ee9038519c6f7c0f73
-</body>
+    <script src="js/cardapio.js"></script> 
+    <script src="js/estatisticas.js"></script>
+ </body>
 </html>

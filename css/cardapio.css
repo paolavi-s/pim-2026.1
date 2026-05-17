@@ -1,26 +1,21 @@
 
-/* Cardápio/MENU */
-
-/* Container principal da seção Menu */
 .menu {
-  padding: 48px 24px;  /* Espaçamento interno (cima/baixo e laterais) */
-  background: #FFF8F0; /* Cor de fundo clara (bege suave) */
+  padding: 48px 24px;
+  background: #FFF8F0;
 }
 
-/* Caixa branca que envolve todo o cardápio */
 .cardapio-wrap {
-  background: #fff; /* Fundo branco */
-  border-radius: 20px; /* Cantos arredondados */
-  border: 1.5px solid #f0d0b0; /* Borda fina clara */
-  padding: 32px 28px; /* Espaçamento interno */
-  max-width: 960px; /* Largura máxima */
-  margin: 0 auto; /* Centraliza na tela */
+  background: #fff;
+  border-radius: 20px;
+  border: 1.5px solid #f0d0b0;
+  padding: 32px 28px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-/* Cabeçalho do cardápio (título + botões de categoria) */
 .cardapio-header {
-  text-align: center; /* Centraliza o conteúdo */
-  margin-bottom: 24px; /* Espaço abaixo do header */
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .cardapio-header h2 {
@@ -30,72 +25,69 @@
   margin-bottom: 16px;
 }
 
-/* Botões de Categorias */
 .cardapio-botoes {
-  display: flex; /* Coloca os botões em linha */
-  gap: 8px; /* Espaço entre os botões */
-  flex-wrap: wrap; /* Quebra para linha de baixo se não couber */
-  justify-content: center; /* Centraliza os botões */
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Botão de categoria */
 .ctab {
-  background: transparent; /* Fundo transparente inicialmente */
-  border: 2px solid #C4600A; /* Borda laranja */
-  color: #C4600A; /* Texto laranja */
-  border-radius: 999px; /* Botão totalmente arredondado (pílula) */
+  background: transparent;
+  border: 2px solid #C4600A;
+  color: #C4600A;
+  border-radius: 999px;
   padding: 6px 18px;
   font-size: 13px;
-  cursor: pointer; /* Mãozinha ao passar o mouse */
-  transition: all 0.2s; /* Animação suave */
-  font-family: inherit;  /* Usa a mesma fonte do site */
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
 }
 
 .ctab:hover,
-.ctab.active { /* Quando o mouse passa OU quando está ativo */
+.ctab.active {
   background: #C4600A;
-  color: #fff;  /* Texto fica branco */
+  color: #fff;
 }
 
-/* Campo de busca */
 .cardapio-search {
-  margin-bottom: 24px; /* Espaço abaixo da barra de pesquisa */
+  margin-bottom: 24px;
 }
 
 .cardapio-search input {
-  width: 100%; /* Ocupa toda a largura */
-  padding: 10px 18px; 
-  border-radius: 999px; /* Campo de busca arredondado */
+  width: 100%;
+  padding: 10px 18px;
+  border-radius: 999px;
   border: 1.5px solid #f0d0b0;
   font-size: 14px;
   color: #5A2D00;
-  outline: none; /* Remove a borda azul padrão do foco */
+  outline: none;
   background: #FFF8F0;
   font-family: inherit;
 }
 
-.cardapio-search input:focus { /* Quando o usuário clica no campo */
-  border-color: #C4600A; /* Borda fica laranja */
+.cardapio-search input:focus {
+  border-color: #C4600A;
 }
 
-/* Seção por categorias do MENU */
+/* ===== Seção por categorias ===== */
 
 .menu-secao {
-  margin-bottom: 36px; /* Espaço entre as seções */
+  margin-bottom: 36px;
 }
 
 .menu-secao-titulo {
   font-size: 12px;
   font-weight: 700;
   color: #C4600A;
-  letter-spacing: 0.08em; /* Espaçamento entre letras */
-  text-transform: uppercase; /* Deixa tudo em maiúsculas */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: 14px;
   padding-bottom: 8px;
-  border-bottom: 1.5px solid #f0d0b0; /* Linha separadora */
+  border-bottom: 1.5px solid #f0d0b0;
 }
 
-/* Carrossel Horizontal de Produtos */
+/* ===== CARROSSEL ===== */
 
 .menu-carrossel-wrapper {
   position: relative;
@@ -104,7 +96,6 @@
   gap: 8px;
 }
 
-/* Área que contém os cards com rolagem horizontal */
 .menu-carrossel {
   display: flex;
   gap: 16px;
@@ -116,7 +107,6 @@
   flex: 1;
 }
 
-/* Estilização da barra de rolagem no Chrome */
 .menu-carrossel::-webkit-scrollbar {
   height: 5px;
 }
@@ -131,9 +121,8 @@
   border-radius: 4px;
 }
 
-/* Botões de seta (anterior e próximo) */
 .menu-arr {
-  flex-shrink: 0; /* Não encolhe */
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -153,27 +142,26 @@
   opacity: 1;
 }
 
-/* Card dos item */
+/* ===== Card dos item ===== */
 
 .menu-card {
-  min-width: 200px; /* Largura mínima fixa */
-  max-width: 200px; /* Largura máxima */
+  min-width: 200px;
+  max-width: 200px;
   background: #fff;
   border: 1.5px solid #f0d0b0;
   border-radius: 16px;
-  overflow: hidden; /* Esconde conteúdo que ultrapassa */
-  scroll-snap-align: start; /* Encaixa o card na rolagem */
-  flex-shrink: 0; /* Não encolhe */
-  display: flex; 
-  flex-direction: column;  /* Organiza conteúdo de cima para baixo */
+  overflow: hidden;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
   transition: border-color 0.2s;
 }
 
-.menu-card:hover { 
-  border-color: #C4600A; /* Borda fica laranja ao passar o mouse */
+.menu-card:hover {
+  border-color: #C4600A;
 }
 
-/* Imagem do produto */
 .menu-card-img {
   width: 100%;
   height: 130px;
@@ -187,17 +175,16 @@
 .menu-card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Imagem preenche o espaço sem distorcer */
+  object-fit: cover;
   display: block;
 }
 
-/* Informações do card */
 .menu-card-info {
   padding: 12px 14px 14px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  flex: 1; /* Faz o conteúdo ocupar o espaço restante */
+  flex: 1;
 }
 
 .menu-card-nome {
@@ -210,7 +197,7 @@
   font-size: 12px;
   color: #9A6040;
   line-height: 1.4;
-  flex: 1;  /* Faz a descrição crescer */
+  flex: 1;
 }
 
 .menu-card-preco {
@@ -222,5 +209,5 @@
   padding: 4px 14px;
   font-size: 13px;
   font-weight: 700;
-  align-self: flex-start; /* Alinha à esquerda */
+  align-self: flex-start;
 }
