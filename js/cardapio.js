@@ -7,11 +7,11 @@ const cardapioData = {
     { nome: "Chocolate Quente",  desc: "Leite com achocolatado quente e cremoso.",         preco: "R$15", img: "img/chocolate-quente.jpeg" },
   ],
   "cafes-gelados": [
-    { nome: "Cold Paw Brew",      desc: "Cold brew infusionado por 18 horas.",             preco: "R$14", img: "img/cold-paw.jpg" },
-    { nome: "Frappé Miado",       desc: "Frappé cremoso com caramelo e chantilly.",        preco: "R$16", img: "img/frappe.jpg" },
-    { nome: "Iced Matcha",        desc: "Matcha gelado com leite de aveia.",               preco: "R$15", img: "img/iced-matcha.jpg" },
-    { nome: "Milkshake de Café",  desc: "Milkshake artesanal sabor café intenso.",         preco: "R$13", img: "img/milkshake.jpg" },
-    { nome: "Chá Gelado",         desc: "Chá da casa refrescante com limão e hortelã.",    preco: "R$10", img: "img/cha.jpg" },
+    { nome: "Cold Paw Brew",      desc: "Cold brew infusionado por 18 horas.",             preco: "R$14", img: "img/cold-paw-brew.png" },
+    { nome: "Frappé Miado",       desc: "Frappé cremoso com caramelo e chantilly.",        preco: "R$16", img: "img/frappe-miado.png" },
+    { nome: "Iced Matcha",        desc: "Matcha gelado com leite de aveia.",               preco: "R$15", img: "img/iced-matcha.png" },
+    { nome: "Milkshake de Café",  desc: "Milkshake artesanal sabor café intenso.",         preco: "R$13", img: "img/milkshake.png" },
+    { nome: "Chá Gelado",         desc: "Chá da casa refrescante com limão e hortelã.",    preco: "R$10", img: "img/cha.jpeg" },
   ],
   "salgados": [
     { nome: "Croissant de Queijo", desc: "Croissant folhado com queijo derretido.",        preco: "R$9",  img: "img/croissant.png" },
