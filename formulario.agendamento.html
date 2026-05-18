@@ -7,13 +7,57 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg-body: #f5f0eb;
+      --bg-card: #fff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --border-color: #e0d5cc;
+      --input-bg: #faf7f5;
+      --heading-color: #4a1e05;
+      --accent: #a36326;
+      --btn-bg: #7b3b0c;
+      --btn-hover: #4a1e05;
+    }
+
+    body.dark-mode {
+      --bg-body: #1e1712;
+      --bg-card: #2c241e;
+      --text-primary: #f0e2d4;
+      --text-secondary: #b9a892;
+      --border-color: #5a463a;
+      --input-bg: #3a2c24;
+      --heading-color: #f5bc8e;
+      --accent: #d68b45;
+      --btn-bg: #b35f1a;
+      --btn-hover: #e07a2c;
+    }
+
     body {
-      background: #f5f0eb;
+      background: var(--bg-body);
       font-family: 'Lato', sans-serif;
-      color: #1a1a1a;
+      color: var(--text-primary);
       min-height: 100vh;
       padding: 2rem 1rem;
+      transition: background 0.3s, color 0.3s;
     }
+
+    .theme-toggle, .contrast-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .contrast-toggle { right: 90px; }
+    .theme-toggle:hover, .contrast-toggle:hover { background: var(--btn-hover); }
 
     .form-wrap {
       max-width: 620px;
@@ -29,17 +73,17 @@
       font-family: 'Playfair Display', serif;
       font-size: 32px;
       font-weight: 600;
-      color: #4a1e05;
+      color: var(--heading-color);
       margin-bottom: 4px;
     }
     .form-header p {
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
     }
 
     .section-card {
-      background: #fff;
-      border: 1px solid #e0d5cc;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 1.25rem;
@@ -49,7 +93,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 500;
-      color:  #a36326;
+      color: var(--accent);
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
@@ -72,7 +116,7 @@
     .field label {
       font-size: 12px;
       font-weight: 700;
-      color: #888;
+      color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
@@ -83,9 +127,9 @@
       font-size: 14px;
       padding: 9px 12px;
       border-radius: 8px;
-      border: 1px solid #d0c4b8;
-      background: #faf7f5;
-      color: #1a1a1a;
+      border: 1px solid var(--border-color);
+      background: var(--input-bg);
+      color: var(--text-primary);
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
@@ -100,11 +144,10 @@
       min-height: 80px;
     }
 
-    /* Botão */
     .submit-btn {
       width: 100%;
       padding: 14px;
-      background: #7b3b0c;
+      background: var(--btn-bg);
       color: #fff;
       font-family: 'Lato', sans-serif;
       font-size: 15px;
@@ -120,159 +163,172 @@
       gap: 8px;
       margin-top: 0.5rem;
     }
-    .submit-btn:hover { background: #4a1e05; }
+    .submit-btn:hover { background: var(--btn-hover); }
     .submit-btn:active { transform: scale(0.98); }
 
-    /* Mensagem de sucesso */
     .success-msg {
       display: none;
       text-align: center;
       padding: 3rem 2rem;
-      background: #fff;
-      border: 1px solid #e0d5cc;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
       margin-top: 1rem;
     }
     .success-msg h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      color: #4a1e05;
+      color: var(--heading-color);
       margin-bottom: 8px;
     }
     .success-msg p {
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
     }
 
     @media (max-width: 500px) {
       .field-row { grid-template-columns: 1fr; }
     }
+
+    /* ALTO CONTRASTE LARANJA */
+    body.high-contrast {
+        --bg-body: #000000 !important;
+        --bg-card: #000000 !important;
+        --text-primary: #ff8c00 !important;
+        --text-secondary: #ff8c00 !important;
+        --border-color: #ff8c00 !important;
+        --input-bg: #000000 !important;
+        --heading-color: #ff8c00 !important;
+        --accent: #ff8c00 !important;
+        --btn-bg: #000000 !important;
+        --btn-hover: #ff8c00 !important;
+    }
+
+    body.high-contrast .section-card,
+    body.high-contrast .field input,
+    body.high-contrast .field select,
+    body.high-contrast .field textarea,
+    body.high-contrast .submit-btn,
+    body.high-contrast .success-msg {
+        border: 2px solid #ff8c00 !important;
+        background: #000000 !important;
+        color: #ff8c00 !important;
+    }
+
+    body.high-contrast .submit-btn {
+        background: #000000;
+        color: #ff8c00;
+        border: 2px solid #ff8c00;
+    }
+
+    body.high-contrast .submit-btn:hover {
+        background: #ff8c00;
+        color: #000000;
+    }
   </style>
 </head>
 <body>
 
-  <div class="form-wrap">
+<div style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000;">
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    <button class="contrast-toggle" id="contrastToggle">♿</button>
+</div>
 
+<div class="form-wrap">
     <div class="form-header">
       <h1>Reserva de Horário</h1>
       <p>Agende sua visita para conhecer e brincar com os nossos gatinhos!</p>
     </div>
 
     <form id="main-form" onsubmit="handleSubmit(event)">
-
       <div class="section-card">
         <div class="section-title">Dados Pessoais</div>
-
         <div class="field-row">
-          <div class="field">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" placeholder="Ex: Valentino da Silva" required>
-          </div>
-          <div class="field">
-            <label for="documento">Documento (CPF ou RG)</label>
-            <input type="text" id="documento" placeholder="000.000.000-00 ou 00.000.000-0" required>
-          </div>
+          <div class="field"><label for="nome">Nome completo</label><input type="text" id="nome" placeholder="Ex: Valentino da Silva" required></div>
+          <div class="field"><label for="documento">Documento (CPF ou RG)</label><input type="text" id="documento" placeholder="000.000.000-00 ou 00.000.000-0" required></div>
         </div>
-
         <div class="field-row">
-          <div class="field">
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="exemplo@email.com" required>
-          </div>
+          <div class="field"><label for="telefone">Telefone</label><input type="tel" id="telefone" placeholder="(11) 99999-9999" required></div>
+          <div class="field"><label for="email">E-mail</label><input type="email" id="email" placeholder="exemplo@email.com" required></div>
         </div>
       </div>
 
       <div class="section-card">
         <div class="section-title">Detalhes da Visita</div>
-
         <div class="field-row">
-          <div class="field">
-            <label for="data">Data da Visita</label>
-            <input type="date" id="data" required>
-          </div>
-          <div class="field">
-            <label for="horario">Horário</label>
-            <select id="horario" required>
-              <option value="" disabled selected>Selecione um horário</option>
-              <option value="10:00">10:00</option>
-              <option value="11:30">11:30</option>
-              <option value="13:00">13:00</option>
-              <option value="14:30">14:30</option>
-              <option value="16:00">16:00</option>
-              <option value="17:30">17:30</option>
-              <option value="19:00">19:00</option>
-            </select>
-          </div>
+          <div class="field"><label for="data">Data da Visita</label><input type="date" id="data" required></div>
+          <div class="field"><label for="horario">Horário</label><select id="horario" required><option value="" disabled selected>Selecione um horário</option><option value="10:00">10:00</option><option value="11:30">11:30</option><option value="13:00">13:00</option><option value="14:30">14:30</option><option value="16:00">16:00</option><option value="17:30">17:30</option><option value="19:00">19:00</option></select></div>
         </div>
-
-        <div class="field-row full">
-          <div class="field">
-            <label for="pessoas">Quantidade de Pessoas</label>
-            <select id="pessoas" required>
-              <option value="1">1 pessoa</option>
-              <option value="2">2 pessoas</option>
-              <option value="3">3 pessoas</option>
-              <option value="4">4 pessoas</option>
-              <option value="5+">5 ou mais pessoas</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field-row full" style="margin-bottom: 0;">
-          <div class="field">
-            <label for="observacoes">Alguma duvida em relação á area de gatos?</label>
-            <textarea id="observacoes" placeholder="Ex: Crianças podem entrar, quantidade de gatos no local, etc"></textarea>
-          </div>
-        </div>
+        <div class="field-row full"><div class="field"><label for="pessoas">Quantidade de Pessoas</label><select id="pessoas" required><option value="1">1 pessoa</option><option value="2">2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option><option value="5+">5 ou mais pessoas</option></select></div></div>
+        <div class="field-row full" style="margin-bottom: 0;"><div class="field"><label for="observacoes">Alguma duvida em relação á area de gatos?</label><textarea id="observacoes" placeholder="Ex: Crianças podem entrar, quantidade de gatos no local, etc"></textarea></div></div>
       </div>
 
-      <button type="submit" class="submit-btn">
-        Reservar Horário
-      </button>
-
+      <button type="submit" class="submit-btn">Reservar Horário</button>
     </form>
 
     <div class="success-msg" id="success">
       <h3>Reserva Solicitada!</h3>
       <p>Obrigado por agendar sua visita. Enviamos uma confirmação com os detalhes para o seu e-mail.</p>
     </div>
+</div>
 
-  </div>
-
-  <script>
-    // Configura a data mínima como "hoje" para evitar reservas no passado
+<script>
     const dataInput = document.getElementById('data');
     const hoje = new Date().toISOString().split('T')[0];
     dataInput.min = hoje;
 
-    // Máscara do Telefone (XX) XXXXX-XXXX
     const telInput = document.getElementById('telefone');
     telInput.addEventListener('input', () => {
       let v = telInput.value.replace(/\D/g, '');
       if (v.length > 11) v = v.slice(0, 11);
-      if (v.length > 10) {
-        v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
-      } else if (v.length > 5) {
-        v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
-      } else if (v.length > 2) {
-        v = v.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
-      } else {
-        v = v.replace(/^(\d*)$/, "($1");
-      }
+      if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+      else if (v.length > 5) v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+      else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+      else v = v.replace(/^(\d*)$/, "($1");
       telInput.value = v;
     });
 
-    // Envio do formulário
     function handleSubmit(event) {
-      event.preventDefault(); // Impede a página de recarregar
+      event.preventDefault();
       document.getElementById('main-form').style.display = 'none';
       document.getElementById('success').style.display = 'block';
     }
-  </script>
+
+    // Gerenciamento unificado temas e contraste
+    (function() {
+        const themeToggle = document.getElementById('themeToggle');
+        const contrastToggle = document.getElementById('contrastToggle');
+        const savedTheme = localStorage.getItem('theme');
+        const savedContrast = localStorage.getItem('highContrast');
+
+        function setTheme(theme) {
+            if (theme === 'dark') { document.body.classList.add('dark-mode'); themeToggle.textContent = '☀️'; }
+            else { document.body.classList.remove('dark-mode'); themeToggle.textContent = '🌙'; }
+            localStorage.setItem('theme', theme);
+        }
+        function setHighContrast(enabled) {
+            if (enabled) { document.body.classList.add('high-contrast'); contrastToggle.textContent = '✅'; }
+            else { document.body.classList.remove('high-contrast'); contrastToggle.textContent = '♿'; }
+            localStorage.setItem('highContrast', enabled ? 'true' : 'false');
+        }
+        if (savedTheme) setTheme(savedTheme); else setTheme('light');
+        if (savedContrast === 'true') setHighContrast(true); else setHighContrast(false);
+        if (themeToggle) themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark'));
+        if (contrastToggle) contrastToggle.addEventListener('click', () => setHighContrast(!document.body.classList.contains('high-contrast')));
+    })();
+</script>
+
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 
 </body>
 </html>
