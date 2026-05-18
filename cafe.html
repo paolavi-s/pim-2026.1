@@ -9,399 +9,244 @@
 </head>
 <body>
 
-    <header class="topbar">
-        <div class="brand"> <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="logo-img">
-        </div>
-        <nav class="navbar"> <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre nós</a>
-            <a href="#cardapio">Cardápio</a>
-            <a href="#adocao">Adoção</a>
-            <a href="#contato">Mais informações</a>
-        </nav>
+<header class="topbar">
+    <div class="brand"> <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="logo-img">
+    </div>
+    <nav class="navbar"> <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#adocao">Adoção</a>
+        <a href="#contato">Mais informações</a>
+    </nav>
+    <div style="display: flex; gap: 12px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">🌙</button>
+        <button class="contrast-toggle" id="contrastToggle" aria-label="Alto contraste">♿</button>
         <button class="button" onclick="window.location.href='formulario.agendamento.html'">Reservar</button>
-    </header>    
+    </div>
+</header>    
 
-    <main id="inicio">
-        <div class="hero"> <div class="hero-texto"> <h1>Seja bem-vindo à Gateferia Nekoffee!</h1>
-                <h2>O lugar perfeito para um café e um cafuné</h2>
+<main id="inicio">
+    <div class="hero"> 
+        <div class="hero-texto"> 
+            <h1>Seja bem-vindo à Gateferia Nekoffee!</h1>
+            <h2>O lugar perfeito para um café e um cafuné</h2>
+        </div>
+        <div class="hero-carrossel">
+            <input type="radio" name="slide" id="s1" checked>
+            <input type="radio" name="slide" id="s2">
+            <input type="radio" name="slide" id="s3">
+            <input type="radio" name="slide" id="s4">
+            <div class="carrossel-track">
+                <img src="img/homeowpage.jpg" alt="Gato laranja fofinho">
+                <img src="img/Meowtcha.png"    alt="Prato do cardápio">
+                <img src="img/interior-cafe.png"     alt="Interior do café">
+                <img src="img/area-gatos.png" alt="Área dos gatos">
             </div>
-
-            <div class="hero-carrossel">
-                <input type="radio" name="slide" id="s1" checked>
-                <input type="radio" name="slide" id="s2">
-                <input type="radio" name="slide" id="s3">
-                <input type="radio" name="slide" id="s4">
-
-                <div class="carrossel-track">
-                    <img src="img/homeowpage.jpg" alt="Gato laranja fofinho">
-                    <img src="img/Meowtcha.png"    alt="Prato do cardápio">
-                    <img src="img/interior-cafe.png"     alt="Interior do café">
-                    <img src="img/area-gatos.png" alt="Área dos gatos">
-                </div>
-
-                <label class="carrossel-btn prev p1" for="s4">&#8592;</label>
-                <label class="carrossel-btn prev p2" for="s1">&#8592;</label>
-                <label class="carrossel-btn prev p3" for="s2">&#8592;</label>
-                <label class="carrossel-btn prev p4" for="s3">&#8592;</label>
-
-                <label class="carrossel-btn next n1" for="s2">&#8594;</label>
-                <label class="carrossel-btn next n2" for="s3">&#8594;</label>
-                <label class="carrossel-btn next n3" for="s4">&#8594;</label>
-                <label class="carrossel-btn next n4" for="s1">&#8594;</label>
-
-                <div class="carrossel-dots">
-                    <label for="s1" class="dot d1"></label>
-                    <label for="s2" class="dot d2"></label>
-                    <label for="s3" class="dot d3"></label>
-                    <label for="s4" class="dot d4"></label>
-                </div>
+            <label class="carrossel-btn prev p1" for="s4">&#8592;</label>
+            <label class="carrossel-btn prev p2" for="s1">&#8592;</label>
+            <label class="carrossel-btn prev p3" for="s2">&#8592;</label>
+            <label class="carrossel-btn prev p4" for="s3">&#8592;</label>
+            <label class="carrossel-btn next n1" for="s2">&#8594;</label>
+            <label class="carrossel-btn next n2" for="s3">&#8594;</label>
+            <label class="carrossel-btn next n3" for="s4">&#8594;</label>
+            <label class="carrossel-btn next n4" for="s1">&#8594;</label>
+            <div class="carrossel-dots">
+                <label for="s1" class="dot d1"></label>
+                <label for="s2" class="dot d2"></label>
+                <label for="s3" class="dot d3"></label>
+                <label for="s4" class="dot d4"></label>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <section id="sobre" class="sobre-nos">
-        <h2>Sobre nós</h2>
-        <div class="sobre-wrapper">
-            <img src="img/gato-about-us.jpeg" alt="Gato curioso" class="sobre-gato">  <div class="sobre-conteudo"> <p>A cafeteria Nekoffee é um estabelecimento com foco em gatos. Funcionamos como uma cafeteria normal, porém focamos no resgate de animais em situação de rua e os ajudamos a encontrar um lar para viverem felizes. Incentivamos a adoção responsável.</p>
-                <p>Se você é um amante de gatos e adora passar um tempo com eles, este é o lugar perfeito! Mesmo que seu desejo não seja adotar, ainda é possível desfrutar da companhia dos nosso felinos agendando um horário. Está interessado? </p>
+<section id="sobre" class="sobre-nos">
+    <h2>Sobre nós</h2>
+    <div class="sobre-wrapper">
+        <img src="img/gato-about-us.jpeg" alt="Gato curioso" class="sobre-gato">  
+        <div class="sobre-conteudo"> 
+            <p>A cafeteria Nekoffee é um estabelecimento com foco em gatos. Funcionamos como uma cafeteria normal, porém focamos no resgate de animais em situação de rua e os ajudamos a encontrar um lar para viverem felizes. Incentivamos a adoção responsável.</p>
+            <p>Se você é um amante de gatos e adora passar um tempo com eles, este é o lugar perfeito! Mesmo que seu desejo não seja adotar, ainda é possível desfrutar da companhia dos nosso felinos agendando um horário. Está interessado? </p>
+        </div>
+    </div>
+    <div class="visitas-section">
+        <h2 class="visitas-titulo">Como funcionam as visitas?</h2>
+        <p class="visitas-intro">Os gatos ficam em uma área separada da cafeteria por questões de higiene e conforto. Para visitar, é necessário agendamento prévio. Fique atento às regras — os animais, assim como nós, têm seus limites.</p>
+        <div class="regras-lista">
+            <div class="regra-item"><div class="regra-icone">📷</div><div class="regra-texto"><strong>Sem flash</strong><span>Os olhos dos bichanos são sensíveis — a luz forte pode prejudicar a visão deles.</span></div></div>
+            <div class="regra-item"><div class="regra-icone">🍽️</div><div class="regra-texto"><strong>Não os alimente</strong><span>Eles têm dieta própria. Alimentos errados podem causar sobrepeso e problemas de saúde.</span></div></div>
+            <div class="regra-item"><div class="regra-icone">😺</div><div class="regra-texto"><strong>Brinque com cuidado</strong><span>Evite movimentos bruscos ou brincadeiras que possam estressar os gatinhos.</span></div></div>
+            <div class="regra-item"><div class="regra-icone">😻</div><div class="regra-texto"><strong>Respeite o espaço deles</strong><span>Só pegue no colo se eles virem até você primeiro. Deixe-os escolher a interação.</span></div></div>
+            <div class="regra-item"><div class="regra-icone">👶</div><div class="regra-texto"><strong>Crianças menores de 12 anos</strong><span>Podem entrar apenas acompanhadas de um responsável.</span></div></div>
+        </div>
+        <div class="visitas-cta">
+            <p>Pronto para conhecer nossos gatinhos?</p>
+            <button onclick="window.location.href='formulario.agendamento.html'">Agende um horário!</button> 
+        </div>
+    </div>
+</section>
+
+<section id="cardapio" class="menu">
+    <div class="cardapio-wrap">
+        <div class="cardapio-header">
+            <h2>Cardápio</h2>
+            <div class="cardapio-botoes"> 
+                <button class="ctab active" onclick="showTab('todos', this)">Todos</button>
+                <button class="ctab" onclick="showTab('cafes-quentes', this)">Cafés quentes</button>
+                <button class="ctab" onclick="showTab('cafes-gelados', this)">Cafés gelados</button>
+                <button class="ctab" onclick="showTab('salgados', this)">Salgados</button>
+                <button class="ctab" onclick="showTab('doces', this)">Doces</button>
             </div>
         </div>
-
-        <div class="visitas-section">
-            <h2 class="visitas-titulo">Como funcionam as visitas?</h2>
-            <p class="visitas-intro">Os gatos ficam em uma área separada da cafeteria por questões de higiene e conforto. Para visitar, é necessário agendamento prévio. Fique atento às regras — os animais, assim como nós, têm seus limites.</p>
-            
-            <div class="regras-lista">
-                <div class="regra-item">
-                    <div class="regra-icone">📷</div>
-                    <div class="regra-texto">
-                        <strong>Sem flash</strong>
-                        <span>Os olhos dos bichanos são sensíveis — a luz forte pode prejudicar a visão deles.</span>
-                    </div>
-                </div>
-                <div class="regra-item">
-                    <div class="regra-icone">🍽️</div>
-                    <div class="regra-texto">
-                        <strong>Não os alimente</strong>
-                        <span>Eles têm dieta própria. Alimentos errados podem causar sobrepeso e problemas de saúde.</span>
-                    </div>
-                </div>
-                <div class="regra-item">
-                    <div class="regra-icone">😺</div>
-                    <div class="regra-texto">
-                        <strong>Brinque com cuidado</strong>
-                        <span>Evite movimentos bruscos ou brincadeiras que possam estressar os gatinhos.</span>
-                    </div>
-                </div>
-                <div class="regra-item">
-                    <div class="regra-icone">😻</div>
-                    <div class="regra-texto">
-                        <strong>Respeite o espaço deles</strong>
-                        <span>Só pegue no colo se eles virem até você primeiro. Deixe-os escolher a interação.</span>
-                    </div>
-                </div>
-                <div class="regra-item">
-                    <div class="regra-icone">👶</div>
-                    <div class="regra-texto">
-                        <strong>Crianças menores de 12 anos</strong>
-                        <span>Podem entrar apenas acompanhadas de um responsável.</span>
-                    </div>
-                </div>
+        <div class="cardapio-body">
+            <div class="cardapio-search"> 
+                <input type="text" placeholder="Buscar no cardápio..." oninput="filterItems(this.value)" id="search" />
             </div>
+            <div id="cardapio-conteudo"></div> 
+        </div>
+    </div>
+</section>
 
-            <div class="visitas-cta">
-                <p>Pronto para conhecer nossos gatinhos?</p>
-                <button onclick="window.location.href='formulario.agendamento.html'">Agende um horário!</button> 
+<section id="adocao" class="adocao">
+    <h2>Adoção</h2>
+    <p class="adocao-intro">Esses são nossos gatinhos que estão precisando de um lar. Vamos conhecer eles?</p>
+    <div class="adocao-cards">
+        <div class="adocao-card"><div class="adocao-foto-gato1"><img src="img/valentino-lacinho.jpg" alt="Gato sem lar com laço"></div><div class="adocao-info"><h3>Valentino</h3><p>Idade: 11 meses</p><p>Personalidade: Guloso</p><button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button></div></div>
+        <div class="adocao-card"><div class="adocao-foto-gato1"><img src="img/meire-fofinha.jpg" alt="Gatinha tigrada sem lar"></div><div class="adocao-info"><h3>Mirabel</h3><p>Idade: 3 meses</p><p>Personalidade: Preguiçosa</p><button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button></div></div>
+        <div class="adocao-card"><div class="adocao-foto-gato1"><img src="img/malu-fofinha.jpeg" alt="Gata maionese no muro dormindo"></div><div class="adocao-info"><h3>Malu</h3><p>Idade: 12 anos</p><p>Personalidade: Carinhosa</p><button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button></div></div>
+        <div class="adocao-card"><div class="adocao-foto-gato1"><img src="img/maria.png" alt="Gatinha deitada dormindo"></div><div class="adocao-info"><h3>Maria</h3><p>Idade: 4 meses</p><p>Personalidade: Dorminhoca</p><button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button></div></div>
+        <div class="adocao-card"><div class="adocao-foto-gato1"><img src="img/batatinha-nenem.jpeg" alt="Gatinho laranja brincando de carrinho"></div><div class="adocao-info"><h3>Batatinha</h3><p>Idade: 5 meses</p><p>Personalidade: Brincalhão</p><button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button></div></div>
+        <div class="adocao-card"><div class="adocao-foto-gato1"><img src="img/sonic.jpeg" alt="Gato dormindo com expressão engraçada"></div><div class="adocao-info"><h3>Sonic</h3><p>Idade: 3 anos</p><p>Personalidade: Sapeca</p><button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button></div></div>
+    </div>
+</section>
+
+<section id="estatisticas" class="estatisticas">
+    <div class="estatisticas-container">
+        <h2>Nossos Números</h2>
+        <p class="estatisticas-intro">Desde a inauguração, a Nekoffee já impactou positivamente a vida de muitas pessoas e gatinhos! ❤️</p>
+        <div class="estatisticas-grid">
+            <div class="estatistica-card"> <div class="estatistica-icon">👨‍👩‍👧‍👦</div><div class="estatistica-numero" data-target="8793">8.793</div><div class="estatistica-label">Pessoas já visitaram a Gateferia</div></div>
+            <div class="estatistica-card"><div class="estatistica-icon">🐱</div><div class="estatistica-numero" data-target="157">157</div><div class="estatistica-label">Gatinhos adotados</div></div>
+            <div class="estatistica-card"><div class="estatistica-icon">😁</div><div class="estatistica-numero" data-target="96">96%</div><div class="estatistica-label">Se sentiram mais felizes após visitar</div></div>
+            <div class="estatistica-card"><div class="estatistica-icon">🙌</div><div class="estatistica-numero" data-target="73">73%</div><div class="estatistica-label">Relataram redução de estresse, ansiedade e solidão após frequentar a gateferia</div></div>
+        </div>
+        <div class="idade">
+            <h3>Idade do nosso público</h3>
+            <div class="idade-grafico"> 
+                <div class="idade-item"><div class="barra" style="height: 38%;"><span>38%</span></div><span class="idade-label">18 - 25 anos</span></div>
+                <div class="idade-item"><div class="barra" style="height: 45%;"><span>45%</span></div><span class="idade-label">26 - 35 anos</span></div>
+                <div class="idade-item"><div class="barra" style="height: 14%;"><span>14%</span></div><span class="idade-label">36 - 45 anos</span></div>
+                <div class="idade-item"><div class="barra" style="height: 3%;"><span>3%</span></div><span class="idade-label">+46 anos</span></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="cardapio" class="menu">
-        <div class="cardapio-wrap">
-            <div class="cardapio-header">
-                <h2>Cardápio</h2>
-                <div class="cardapio-botoes"> <button class="ctab active" onclick="showTab('todos', this)">Todos</button>
-                    <button class="ctab" onclick="showTab('cafes-quentes', this)">Cafés quentes</button>
-                    <button class="ctab" onclick="showTab('cafes-gelados', this)">Cafés gelados</button>
-                    <button class="ctab" onclick="showTab('salgados', this)">Salgados</button>
-                    <button class="ctab" onclick="showTab('doces', this)">Doces</button>
-                </div>
-            </div>
-            <div class="cardapio-body">
-                <div class="cardapio-search"> <input type="text" placeholder="Buscar no cardápio..." oninput="filterItems(this.value)" id="search" />
-                </div>
-                <div id="cardapio-conteudo"></div> </div>
+<section id="depoimentos">
+    <div class="feedback-wrap">
+        <h2 class="dep-titulo">O que nossos clientes dizem?</h2>
+        <p class="dep-subtitulo">Feedback de quem já visitou a Nekoffee</p>
+        <div class="dep-grid">
+            <div class="dep-card"><span class="dep-tag">Visita</span><div class="dep-stars">★★★★★</div><p class="dep-texto">Melhor cafeteria que já fui! O café é maravilhoso e os gatinhos são super carinhosos. O Valentino ficou no meu colo a tarde toda!</p><div class="dep-author"><div class="dep-avatar">MM</div><div><p class="dep-name">Marisa Monte</p><p class="dep-date">12 mai 2026</p></div></div></div>
+            <div class="dep-card"><span class="dep-tag">Adoção</span><div class="dep-stars">★★★★★</div><p class="dep-texto">Adotei um gatinho há 3 meses e não me arrependo! A equipe foi muito atenciosa. Recomendo demais!</p><div class="dep-author"><div class="dep-avatar">LJ</div><div><p class="dep-name">Leonardo Jardim</p><p class="dep-date">3 abr 2026</p></div></div></div>
+            <div class="dep-card"><span class="dep-tag">Cardápio</span><div class="dep-stars">★★★★☆</div><p class="dep-texto">O Milkshake de cafe é simplesmente incrível! Ambiente aconchegante e os bichinhos são muito bem cuidados.</p><div class="dep-author"><div class="dep-avatar">SC</div><div><p class="dep-name">Sabrina Carpinteira</p><p class="dep-date">28 mar 2026</p></div></div></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="adocao" class="adocao">
-        <h2>Adoção</h2>
-        <p class="adocao-intro">Esses são nossos gatinhos que estão precisando de um lar. Vamos conhecer eles?</p>
-        <div class="adocao-cards">
-            <div class="adocao-card">
-                <div class="adocao-foto-gato1">
-                    <img src="img/valentino-lacinho.jpg" alt="Gato sem lar com laço">
-                </div>
-                <div class="adocao-info">
-                    <h3>Valentino</h3>
-                    <p>Idade: 11 meses</p>
-                    <p>Personalidade: Guloso</p>
-                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                </div>
+<section id="contato">
+    <div class="contato-wrap">
+        <div class="contato-info">
+            <div><img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="contato-logo-img"></div>
+            <hr class="contato-divider">
+            <div class="contato-itens">
+                <div class="contato-item"><span class="contato-icone">✉</span><div class="contato-texto"><span class="contato-label">E-mail</span><p>contato@nekoffee.com.br</p></div></div>
+                <div class="contato-item"><span class="contato-icone">⏱</span><div class="contato-texto"><span class="contato-label">Horário</span><p>Terça a sexta: 10h30 às 18h00</p><p>Sábado e domingo: 9h30 às 19h00</p></div></div>
+                <div class="contato-item"><span class="contato-icone">☏</span><div class="contato-texto"><span class="contato-label">Telefone</span><p>(11) 99999-9999</p><p class="contato-hint">Atendemos apenas em horário comercial! ฅᨐฅ</p></div></div>
             </div>
-            <div class="adocao-card">
-                <div class="adocao-foto-gato1">
-                    <img src="img/meire-fofinha.jpg" alt="Gatinha tigrada sem lar">
-                </div>
-                <div class="adocao-info">
-                    <h3>Mirabel</h3>
-                    <p>Idade: 3 meses</p>
-                    <p>Personalidade: Preguiçosa</p>
-                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                </div>
-            </div>
-            <div class="adocao-card">
-                <div class="adocao-foto-gato1">
-                    <img src="img/malu-fofinha.jpeg" alt="Gata maionese no muro dormindo">
-                </div>
-                <div class="adocao-info">
-                    <h3>Malu</h3>
-                    <p>Idade: 12 anos</p>
-                    <p>Personalidade: Carinhosa</p>
-                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                </div>
-            </div>
-            <div class="adocao-card">
-                <div class="adocao-foto-gato1">
-                    <img src="img/maria.png" alt="Gatinha deitada dormindo">
-                </div>
-                <div class="adocao-info">
-                    <h3>Maria</h3>
-                    <p>Idade: 4 meses</p>
-                    <p>Personalidade: Dorminhoca</p>
-                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                </div>
-            </div>
-            <div class="adocao-card">
-                <div class="adocao-foto-gato1">
-                    <img src="img/batatinha-nenem.jpeg" alt="Gatinho laranja brincando de carrinho">
-                </div>
-                <div class="adocao-info">
-                    <h3>Batatinha</h3>
-                    <p>Idade: 5 meses</p>
-                    <p>Personalidade: Brincalhão</p>
-                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                </div>
-            </div>
-            <div class="adocao-card">
-                <div class="adocao-foto-gato1">
-                    <img src="img/sonic.jpeg" alt="Gato dormindo com expressão engraçada">
-                </div>
-                <div class="adocao-info">
-                    <h3>Sonic</h3>
-                    <p>Idade: 3 anos</p>
-                    <p>Personalidade: Sapeca</p>
-                    <button class="adocao-btn" onclick="window.location.href='formulario.html'">Quero adotar!</button>
-                </div>
-            </div>
+            <hr class="contato-divider">
+            <div class="contato-redes"><span class="contato-label">Redes sociais</span><div class="contato-social"><a href="#" class="social-btn" aria-label="Facebook">f</a><a href="#" class="social-btn" aria-label="Instagram">in</a><a href="#" class="social-btn" aria-label="WhatsApp">w</a></div></div>
         </div>
-    </section>
-
-    
-
-    <section id="estatisticas" class="estatisticas">
-        <div class="estatisticas-container">
-            <h2>Nossos Números</h2>
-            <p class="estatisticas-intro">Desde a inauguração, a Nekoffee já impactou positivamente a vida de muitas pessoas e gatinhos! ❤️</p>
-            <div class="estatisticas-grid">
-                <div class="estatistica-card"> <div class="estatistica-icon">👨‍👩‍👧‍👦</div>
-                    <div class="estatistica-numero" data-target="8793">8.793</div>
-                    <div class="estatistica-label">Pessoas já visitaram a Gateferia</div>
-                </div>
-                <div class="estatistica-card">
-                    <div class="estatistica-icon">🐱</div>
-                    <div class="estatistica-numero" data-target="157">157</div>
-                    <div class="estatistica-label">Gatinhos adotados</div>
-                </div>
-                <div class="estatistica-card">
-                    <div class="estatistica-icon">😁</div>
-                    <div class="estatistica-numero" data-target="96">96%</div>
-                    <div class="estatistica-label">Se sentiram mais felizes após visitar</div>
-                </div>
-                <div class="estatistica-card">
-                    <div class="estatistica-icon">🙌</div>
-                    <div class="estatistica-numero" data-target="73">73%</div>
-                    <div class="estatistica-label">Relataram redução de estresse, ansiedade e solidão após frequentar a gateferia</div>
-                </div>
-            </div>
-            <div class="idade">
-                <h3>Idade do nosso público</h3>
-
-                <div class="idade-grafico"> <div class="idade-item"> 
-                        <div class="barra" style="height: 38%;">
-                            <span>38%</span>
-                        </div>
-                        <span class="idade-label">18 - 25 anos</span>
-                    </div>
-
-                    <div class="idade-item">
-                        <div class="barra" style="height: 45%;">
-                            <span>45%</span>
-                        </div>
-                        <span class="idade-label">26 - 35 anos</span>
-                    </div>
-
-                    <div class="idade-item">
-                        <div class="barra" style="height: 14%;">
-                            <span>14%</span>
-                        </div>
-                        <span class="idade-label">36 - 45 anos</span>
-                    </div>
-
-                    <div class="idade-item">
-                        <div class="barra" style="height: 3%;">
-                            <span>3%</span>
-                        </div>
-                        <span class="idade-label">+46 anos</span>
-                    </div>
-                </div>
-            </div>
+        <div class="contato-form">
+            <h2>Deixe uma mensagem</h2>
+            <p class="contato-subtitulo">Tem alguma dúvida ou quer falar com a gente? •⩊•</p>
+            <form> 
+                <div class="contato-campo"><label for="c-nome">Nome</label><input type="text" id="c-nome" placeholder="Seu nome completo"></div>
+                <div class="contato-form-row"><div class="contato-campo"><label for="c-email">E-mail</label><input type="email" id="c-email" placeholder="seu@email.com"></div><div class="contato-campo"><label for="c-tel">Telefone</label><input type="tel" id="c-tel" placeholder="(11) 99999-9999"></div></div>
+                <div class="contato-campo"><label for="c-msg">Mensagem</label><textarea id="c-msg" placeholder="Escreva sua mensagem..."></textarea></div>
+                <div class="contato-campo"><label>Avaliação</label><div class="contato-stars" id="contato-star-pick"><span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span></div></div>
+                <div class="contato-check"><input type="checkbox" id="c-lgpd"><label for="c-lgpd">Concordo com a <a href="#">política de privacidade</a> e autorizo o contato pela Nekoffee.</label></div>
+                <button type="submit" class="contato-enviar">Enviar mensagem ➤</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
+<script src="js/cardapio.js"></script> 
+<script src="js/estatisticas.js"></script>
+<script>
+    // Gerenciamento unificado: modo escuro + alto contraste
+    (function() {
+        const themeToggle = document.getElementById('themeToggle');
+        const contrastToggle = document.getElementById('contrastToggle');
 
-    <section id="depoimentos">
-        <div class="feedback-wrap">
-            <h2 class="dep-titulo">O que nossos clientes dizem?</h2>
-            <p class="dep-subtitulo">Feedback de quem já visitou a Nekoffee</p>
+        const savedTheme = localStorage.getItem('theme');
+        const savedContrast = localStorage.getItem('highContrast');
 
-            <div class="dep-grid">
-                <div class="dep-card">
-                    <span class="dep-tag">Visita</span>
-                    <div class="dep-stars">★★★★★</div>
-                    <p class="dep-texto">Melhor cafeteria que já fui! O café é maravilhoso e os gatinhos são super carinhosos. O Valentino ficou no meu colo a tarde toda!</p>
-                    <div class="dep-author">
-                        <div class="dep-avatar">MM</div>
-                        <div><p class="dep-name">Marisa Monte</p><p class="dep-date">12 mai 2026</p></div>
-                    </div>
-                </div>
-                <div class="dep-card">
-                    <span class="dep-tag">Adoção</span>
-                    <div class="dep-stars">★★★★★</div>
-                    <p class="dep-texto">Adotei um gatinho há 3 meses e não me arrependo! A equipe foi muito atenciosa. Recomendo demais!</p>
-                    <div class="dep-author">
-                        <div class="dep-avatar">LJ</div>
-                        <div><p class="dep-name">Leonardo Jardim</p><p class="dep-date">3 abr 2026</p></div>
-                    </div>
-                </div>
-                <div class="dep-card">
-                    <span class="dep-tag">Cardápio</span>
-                    <div class="dep-stars">★★★★☆</div>
-                    <p class="dep-texto">O Milkshake de cafe é simplesmente incrível! Ambiente aconchegante e os bichinhos são muito bem cuidados.</p>
-                    <div class="dep-author">
-                        <div class="dep-avatar">SC</div>
-                        <div><p class="dep-name">Sabrina Carpinteira</p><p class="dep-date">28 mar 2026</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.textContent = '☀️';
+            } else {
+                document.body.classList.remove('dark-mode');
+                if (themeToggle) themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        }
 
-    <section id="contato">
-        <div class="contato-wrap">
-            <div class="contato-info">
-                <div>
-                    <img src="img/logotipo-nekoffee.png" alt="Nekoffee" class="contato-logo-img">
-                </div>
-                <hr class="contato-divider">
+        function setHighContrast(enabled) {
+            if (enabled) {
+                document.body.classList.add('high-contrast');
+                if (contrastToggle) contrastToggle.textContent = '✅';
+            } else {
+                document.body.classList.remove('high-contrast');
+                if (contrastToggle) contrastToggle.textContent = '♿';
+            }
+            localStorage.setItem('highContrast', enabled ? 'true' : 'false');
+        }
 
-                <div class="contato-itens">
-                    <div class="contato-item"> 
-                        <span class="contato-icone">✉</span>
-                        <div class="contato-texto">
-                            <span class="contato-label">E-mail</span>
-                            <p>contato@nekoffee.com.br</p>
-                        </div>
-                    </div>
-                    <div class="contato-item">
-                        <span class="contato-icone">⏱</span>
-                        <div class="contato-texto">
-                            <span class="contato-label">Horário</span>
-                            <p>Terça a sexta: 10h30 às 18h00</p>
-                            <p>Sábado e domingo: 9h30 às 19h00</p>
-                        </div>
-                    </div>
-                    <div class="contato-item">
-                        <span class="contato-icone">☏</span>
-                        <div class="contato-texto">
-                            <span class="contato-label">Telefone</span>
-                            <p>(11) 99999-9999</p>
-                            <p class="contato-hint">Atendemos apenas em horário comercial! ฅᨐฅ</p>
-                        </div>
-                    </div>
-                </div>
-                <hr class="contato-divider">
-                <div class="contato-redes"> <span class="contato-label">Redes sociais</span>
-                    <div class="contato-social">
-                        <a href="#" class="social-btn" aria-label="Facebook">f</a>
-                        <a href="#" class="social-btn" aria-label="Instagram">in</a>
-                        <a href="#" class="social-btn" aria-label="WhatsApp">w</a>
-                    </div>
-                </div>
-            </div>
+        if (savedTheme) setTheme(savedTheme);
+        else setTheme('light');
 
-            <div class="contato-form">
-                <h2>Deixe uma mensagem</h2>
-                <p class="contato-subtitulo">Tem alguma dúvida ou quer falar com a gente? •⩊•</p>
+        if (savedContrast === 'true') setHighContrast(true);
+        else setHighContrast(false);
 
-                <form> <div class="contato-campo">
-                        <label for="c-nome">Nome</label>
-                        <input type="text" id="c-nome" placeholder="Seu nome completo">
-                    </div>
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.body.classList.contains('dark-mode');
+                setTheme(isDark ? 'light' : 'dark');
+            });
+        }
+        if (contrastToggle) {
+            contrastToggle.addEventListener('click', () => {
+                const isHighContrast = document.body.classList.contains('high-contrast');
+                setHighContrast(!isHighContrast);
+            });
+        }
+    })();
+</script>
 
-                    <div class="contato-form-row">
-                        <div class="contato-campo">
-                            <label for="c-email">E-mail</label>
-                            <input type="email" id="c-email" placeholder="seu@email.com">
-                        </div>
-                        <div class="contato-campo">
-                            <label for="c-tel">Telefone</label>
-                            <input type="tel" id="c-tel" placeholder="(11) 99999-9999">
-                        </div>
-                    </div>
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 
-                    <div class="contato-campo">
-                        <label for="c-msg">Mensagem</label>
-                        <textarea id="c-msg" placeholder="Escreva sua mensagem..."></textarea>
-                    </div>
-
-                    <div class="contato-campo">
-                        <label>Avaliação</label>
-                        <div class="contato-stars" id="contato-star-pick">
-                            <span data-v="1">★</span>
-                            <span data-v="2">★</span>
-                            <span data-v="3">★</span>
-                            <span data-v="4">★</span>
-                            <span data-v="5">★</span>
-                        </div>
-                    </div>
-
-                    <div class="contato-check">
-                        <input type="checkbox" id="c-lgpd">
-                        <label for="c-lgpd">
-                            Concordo com a <a href="#">política de privacidade</a> e autorizo o contato pela Nekoffee.
-                        </label>
-                    </div>
-
-                    <button type="submit" class="contato-enviar">Enviar mensagem ➤</button>
-                </form>
-            </div>
-
-        </div>
-        
-    </section>
-
-    <script src="js/cardapio.js"></script> 
-    <script src="js/estatisticas.js"></script>
- </body>
+</body>
 </html>
