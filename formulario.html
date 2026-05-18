@@ -7,13 +7,57 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg-body: #f5f0eb;
+      --bg-card: #fff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666;
+      --border-color: #e0d5cc;
+      --input-bg: #faf7f5;
+      --heading-color: #4a1e05;
+      --accent: #a36326;
+      --btn-bg: #7b3b0c;
+      --btn-hover: #4a1e05;
+    }
+
+    body.dark-mode {
+      --bg-body: #1e1712;
+      --bg-card: #2c241e;
+      --text-primary: #f0e2d4;
+      --text-secondary: #b9a892;
+      --border-color: #5a463a;
+      --input-bg: #3a2c24;
+      --heading-color: #f5bc8e;
+      --accent: #d68b45;
+      --btn-bg: #b35f1a;
+      --btn-hover: #e07a2c;
+    }
+
     body {
-      background: #f5f0eb;
+      background: var(--bg-body);
       font-family: 'Lato', sans-serif;
-      color: #1a1a1a;
+      color: var(--text-primary);
       min-height: 100vh;
       padding: 2rem 1rem;
+      transition: background 0.3s, color 0.3s;
     }
+
+    .theme-toggle, .contrast-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .contrast-toggle { right: 90px; }
+    .theme-toggle:hover, .contrast-toggle:hover { background: var(--btn-hover); }
 
     .form-wrap {
       max-width: 620px;
@@ -29,17 +73,17 @@
       font-family: 'Playfair Display', serif;
       font-size: 32px;
       font-weight: 600;
-      color: #4a1e05;
+      color: var(--heading-color);
       margin-bottom: 4px;
     }
     .form-header p {
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
     }
 
     .section-card {
-      background: #fff;
-      border: 1px solid #e0d5cc;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 1.25rem;
@@ -49,13 +93,12 @@
       font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 500;
-      color:  #a36326;
+      color: var(--accent);
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .section-title i { font-size: 18px; }
 
     .field-row {
       display: grid;
@@ -73,7 +116,7 @@
     .field label {
       font-size: 12px;
       font-weight: 700;
-      color: #888;
+      color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
@@ -84,9 +127,9 @@
       font-size: 14px;
       padding: 9px 12px;
       border-radius: 8px;
-      border: 1px solid #d0c4b8;
-      background: #faf7f5;
-      color: #1a1a1a;
+      border: 1px solid var(--border-color);
+      background: var(--input-bg);
+      color: var(--text-primary);
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
@@ -101,12 +144,11 @@
       min-height: 80px;
     }
 
-    /* Questionário */
     .q-item { margin-bottom: 1.25rem; }
     .q-label {
       font-size: 14px;
       font-weight: 700;
-      color: #1a1a1a;
+      color: var(--text-primary);
       margin-bottom: 8px;
       display: block;
     }
@@ -120,17 +162,17 @@
       align-items: center;
       gap: 10px;
       padding: 10px 14px;
-      border: 1px solid #e0d5cc;
+      border: 1px solid var(--border-color);
       border-radius: 8px;
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
       font-size: 14px;
-      color: #1a1a1a;
-      background: #faf7f5;
+      color: var(--text-primary);
+      background: var(--input-bg);
     }
     .q-option:hover {
       border-color: #7b3b0c;
-      background: #fff;
+      background: var(--bg-card);
     }
     .q-option input[type="radio"],
     .q-option input[type="checkbox"] {
@@ -140,12 +182,10 @@
       flex-shrink: 0;
     }
 
-
-    /* Botão */
     .submit-btn {
       width: 100%;
       padding: 14px;
-      background: #7b3b0c;
+      background: var(--btn-bg);
       color: #fff;
       font-family: 'Lato', sans-serif;
       font-size: 15px;
@@ -161,16 +201,15 @@
       gap: 8px;
       margin-top: 0.5rem;
     }
-    .submit-btn:hover { background: #4a1e05; }
+    .submit-btn:hover { background: var(--btn-hover); }
     .submit-btn:active { transform: scale(0.98); }
 
-    /* Mensagem de sucesso */
     .success-msg {
       display: none;
       text-align: center;
       padding: 3rem 2rem;
-      background: #fff;
-      border: 1px solid #e0d5cc;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
       margin-top: 1rem;
     }
@@ -183,139 +222,107 @@
     .success-msg h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      color: #4a1e05;
+      color: var(--heading-color);
       margin-bottom: 8px;
     }
     .success-msg p {
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
     }
 
     @media (max-width: 500px) {
       .field-row { grid-template-columns: 1fr; }
     }
+
+    /* ALTO CONTRASTE LARANJA */
+    body.high-contrast {
+        --bg-body: #000000 !important;
+        --bg-card: #000000 !important;
+        --text-primary: #ff8c00 !important;
+        --text-secondary: #ff8c00 !important;
+        --border-color: #ff8c00 !important;
+        --input-bg: #000000 !important;
+        --heading-color: #ff8c00 !important;
+        --accent: #ff8c00 !important;
+        --btn-bg: #000000 !important;
+        --btn-hover: #ff8c00 !important;
+    }
+
+    body.high-contrast .section-card,
+    body.high-contrast .q-option,
+    body.high-contrast .field input,
+    body.high-contrast .field select,
+    body.high-contrast .field textarea,
+    body.high-contrast .submit-btn,
+    body.high-contrast .success-msg {
+        border: 2px solid #ff8c00 !important;
+        background: #000000 !important;
+        color: #ff8c00 !important;
+    }
+
+    body.high-contrast .submit-btn {
+        background: #000000;
+        color: #ff8c00;
+        border: 2px solid #ff8c00;
+    }
+
+    body.high-contrast .submit-btn:hover {
+        background: #ff8c00;
+        color: #000000;
+    }
+
+    body.high-contrast .q-option input {
+        accent-color: #ff8c00;
+    }
   </style>
 </head>
 <body>
 
-  <div class="form-wrap">
+<div style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000;">
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    <button class="contrast-toggle" id="contrastToggle">♿</button>
+</div>
 
+<div class="form-wrap">
     <div class="form-header">
       <h1>Cadastro</h1>
       <p>Preencha seus dados e responda o questionário abaixo</p>
     </div>
 
     <div id="main-form">
-
-      <!-- Dados Pessoais -->
       <div class="section-card">
-        <div class="section-title">
-          <i class="ti ti-user"></i> Dados Pessoais
-        </div>
-
+        <div class="section-title">Dados Pessoais</div>
         <div class="field-row">
-          <div class="field">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" placeholder="Ex: Valentino da Silva">
-          </div>
-          <div class="field">
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" placeholder="(11) 99999-9999">
-          </div>
+          <div class="field"><label for="nome">Nome completo</label><input type="text" id="nome" placeholder="Ex: Valentino da Silva"></div>
+          <div class="field"><label for="telefone">Telefone</label><input type="tel" id="telefone" placeholder="(11) 99999-9999"></div>
         </div>
-
         <div class="field-row">
-          <div class="field">
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14">
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="exemplo@email.com">
-          </div>
+          <div class="field"><label for="cpf">CPF</label><input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14"></div>
+          <div class="field"><label for="email">E-mail</label><input type="email" id="email" placeholder="exemplo@email.com"></div>
         </div>
       </div>
 
-      <!-- Questionário -->
       <div class="section-card">
-        <div class="section-title">
-          <i class="ti ti-clipboard-list"></i> Questionário
-        </div>
-
-        <!-- Pergunta 1 - Radio (escolha única) -->
-        <div class="q-item">
-          <span class="q-label">1. Em média, quantas horas por dia o gato ficará sozinho em casa?</span>
-          <div class="q-options">
-            <label class="q-option"><input type="radio" name="q1" value="4h"> Menos que 4 horas por dia</label>
-            <label class="q-option"><input type="radio" name="q1" value="8h"> De 4 a 8 horas por dia</label>
-            <label class="q-option"><input type="radio" name="q1" value="dia"> Mais de 8 horas</label>
-            <label class="q-option"><input type="radio" name="q1" value="disponivel"> Sempre terá alguém em casa</label>
-          </div>
-        </div>
-
-        <div class="q-item">
-          <span class="q-label">2. Que tipo de residência é a sua?</span>
-          <div class="q-options">
-            <label class="q-option"><input type="radio" name="q2" value="casa"> Casa</label>
-            <label class="q-option"><input type="radio" name="q2" value="apt"> Apartamento</label>
-            <label class="q-option"><input type="radio" name="q2" value="outro"> Outro</label>
-          </div>
-        </div>
-
-        <div class="q-item">
-          <span class="q-label">3. Sobre as telas/redes de proteção nas janelas e varandas:</span>
-          <div class="q-options">
-            <label class="q-option"><input type="radio" name="q3" value="sim"> Já tenho telas de proteção instaladas em todas as janelas e áreas abertas.</label>
-            <label class="q-option"><input type="radio" name="q3" value="nao"> Não tenho telas instaladas, mas me comprometo a instalar antes da chegada do gato</label>
-            <label class="q-option"><input type="radio" name="q3" value="nem-pensar">Minha residência não possui telas e não pretendo instalar (o gato não terá acesso à rua).</label>
-          </div>
-        </div>
-
-        <div class="q-item">
-          <span class="q-label">4. Em caso de mudanças de vida (mudança de cidade, casamento, nascimento de filhos), o que acontecerá com o gato?:</span>
-          <div class="q-options">
-            <label class="q-option"><input type="radio" name="q4" value="junto"> Ele irá comigo para onde eu for, faz parte da família.</label>
-            <label class="q-option"><input type="radio" name="q4" value="separado">Tentaria levá-lo, mas se não fosse possível, procuraria um novo lar para ele. </label>
-            <label class="q-option"><input type="radio" name="q4" value="pessoa-conhecida">Deixaria com algum parente ou amigo próximo.</label>
-          </div>
-        </div>
-
-         <div class="q-item">
-          <span class="q-label">Como você planeja lidar com os custos de ração de boa qualidade, vacinas anuais e imprevistos médicos?</span>
-          <div class="q-options">
-            <label class="q-option"><input type="radio" name="q5" value="rico"> Já me planejei financeiramente e estou pronto para arcar com todos os custos.</label>
-            <label class="q-option"><input type="radio" name="q5" value="pobre">Consigo arcar com o básico, mas teria dificuldades em caso de emergências veterinárias caras. </label>
-            <label class="q-option"><input type="radio" name="q5" value="inutil">Ainda não parei para calcular os custos mensais de um gato.</label>
-          </div>
-        </div>
-
-
-        <!-- Pergunta 5 - Texto livre -->
-        <div class="q-item" style="margin-bottom: 0;">
-          <span class="q-label">5. Algum comentário ou sugestão?</span>
-          <div class="field">
-            <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
-          </div>
-        </div>
+        <div class="section-title">Questionário</div>
+        <div class="q-item"><span class="q-label">1. Em média, quantas horas por dia o gato ficará sozinho em casa?</span><div class="q-options"><label class="q-option"><input type="radio" name="q1" value="4h"> Menos que 4 horas por dia</label><label class="q-option"><input type="radio" name="q1" value="8h"> De 4 a 8 horas por dia</label><label class="q-option"><input type="radio" name="q1" value="dia"> Mais de 8 horas</label><label class="q-option"><input type="radio" name="q1" value="disponivel"> Sempre terá alguém em casa</label></div></div>
+        <div class="q-item"><span class="q-label">2. Que tipo de residência é a sua?</span><div class="q-options"><label class="q-option"><input type="radio" name="q2" value="casa"> Casa</label><label class="q-option"><input type="radio" name="q2" value="apt"> Apartamento</label><label class="q-option"><input type="radio" name="q2" value="outro"> Outro</label></div></div>
+        <div class="q-item"><span class="q-label">3. Sobre as telas/redes de proteção nas janelas e varandas:</span><div class="q-options"><label class="q-option"><input type="radio" name="q3" value="sim"> Já tenho telas de proteção instaladas em todas as janelas e áreas abertas.</label><label class="q-option"><input type="radio" name="q3" value="nao"> Não tenho telas instaladas, mas me comprometo a instalar antes da chegada do gato</label><label class="q-option"><input type="radio" name="q3" value="nem-pensar">Minha residência não possui telas e não pretendo instalar (o gato não terá acesso à rua).</label></div></div>
+        <div class="q-item"><span class="q-label">4. Em caso de mudanças de vida (mudança de cidade, casamento, nascimento de filhos), o que acontecerá com o gato?:</span><div class="q-options"><label class="q-option"><input type="radio" name="q4" value="junto"> Ele irá comigo para onde eu for, faz parte da família.</label><label class="q-option"><input type="radio" name="q4" value="separado">Tentaria levá-lo, mas se não fosse possível, procuraria um novo lar para ele. </label><label class="q-option"><input type="radio" name="q4" value="pessoa-conhecida">Deixaria com algum parente ou amigo próximo.</label></div></div>
+        <div class="q-item"><span class="q-label">Como você planeja lidar com os custos de ração de boa qualidade, vacinas anuais e imprevistos médicos?</span><div class="q-options"><label class="q-option"><input type="radio" name="q5" value="rico"> Já me planejei financeiramente e estou pronto para arcar com todos os custos.</label><label class="q-option"><input type="radio" name="q5" value="pobre">Consigo arcar com o básico, mas teria dificuldades em caso de emergências veterinárias caras. </label><label class="q-option"><input type="radio" name="q5" value="inutil">Ainda não parei para calcular os custos mensais de um gato.</label></div></div>
+        <div class="q-item" style="margin-bottom: 0;"><span class="q-label">5. Algum comentário ou sugestão?</span><div class="field"><textarea id="comentario" placeholder="Escreva aqui..."></textarea></div></div>
       </div>
 
-      <button class="submit-btn" onclick="handleSubmit()">
-        <i class="ti ti-send"></i> Enviar cadastro
-      </button>
-
+      <button class="submit-btn" onclick="handleSubmit()">Enviar cadastro</button>
     </div>
 
-    <!-- Mensagem de sucesso -->
     <div class="success-msg" id="success">
-      <i class="ti ti-circle-check"></i>
+      <i>✔️</i>
       <h3>Cadastro enviado!</h3>
       <p>Obrigada por preencher o formulário. Em breve entraremos em contato.</p>
     </div>
+</div>
 
-  </div>
-
-  <script>
-    // Máscara do CPF
+<script>
     const cpfInput = document.getElementById('cpf');
     cpfInput.addEventListener('input', () => {
       let v = cpfInput.value.replace(/\D/g, '');
@@ -326,13 +333,45 @@
       cpfInput.value = v;
     });
 
-
-    // Envio do formulário
     function handleSubmit() {
       document.getElementById('main-form').style.display = 'none';
       document.getElementById('success').style.display = 'block';
     }
-  </script>
+
+    (function() {
+        const themeToggle = document.getElementById('themeToggle');
+        const contrastToggle = document.getElementById('contrastToggle');
+        const savedTheme = localStorage.getItem('theme');
+        const savedContrast = localStorage.getItem('highContrast');
+
+        function setTheme(theme) {
+            if (theme === 'dark') { document.body.classList.add('dark-mode'); themeToggle.textContent = '☀️'; }
+            else { document.body.classList.remove('dark-mode'); themeToggle.textContent = '🌙'; }
+            localStorage.setItem('theme', theme);
+        }
+        function setHighContrast(enabled) {
+            if (enabled) { document.body.classList.add('high-contrast'); contrastToggle.textContent = '✅'; }
+            else { document.body.classList.remove('high-contrast'); contrastToggle.textContent = '♿'; }
+            localStorage.setItem('highContrast', enabled ? 'true' : 'false');
+        }
+        if (savedTheme) setTheme(savedTheme); else setTheme('light');
+        if (savedContrast === 'true') setHighContrast(true); else setHighContrast(false);
+        if (themeToggle) themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark'));
+        if (contrastToggle) contrastToggle.addEventListener('click', () => setHighContrast(!document.body.classList.contains('high-contrast')));
+    })();
+</script>
+
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 
 </body>
 </html>
