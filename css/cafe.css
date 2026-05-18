@@ -1,23 +1,34 @@
 /* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
 
-/* Seletor universal, aplica em todos os elementos da página */
 * {
-  box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura */
-  margin: 0; /* Remove margens padrão */
-  padding: 0; /* Remove espaçamentos internos padrão */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Define cores e tamanhos para usar em todo o site */
 :root {
-  --brown-nav:     #c7772d; /* Cor da barra superior */
+  --brown-nav:     #c7772d;
   --orange:       #e07820;
   --orange-light: #f5a030;
   --cream:        #fdf3e3;
-  --text-dark:    #4a1e05;
+  --text-dark:    #C95E20;
   --text-mid:     #7b3b0c;
 
-  /* Tamanhos de fonte reutilizáveis */
+  --bg-body: #FFFCF8;
+  --bg-card: #fff;
+  --bg-sobre: var(--orange);
+  --text-body: #1a1a1a;
+  --text-heading: #87461C;
+  --text-subhead: #864C25;
+  --border-light: #e0d5cc;
+  --bg-depoimento: #3d1a1a;
+  --text-depoimento: #f0dcc8;
+  --bg-contato-info: #3d1a1a;
+  --bg-contato-form: #f7f0e8;
+  --input-bg: #faf7f5;
+  --input-border: #d0c4b8;
+
   --title-xl:   2.4rem;
   --title-lg:   1.8rem;
   --title-sm:   1.2rem;
@@ -25,35 +36,56 @@
   --body-md:    1rem;
   --body-sm:    0.875rem;
 
-  /* Cores específicas para textos */
   --color-heading: #87461C; 
   --color-subhead: #864C25;
   --color-body:    #000000;
 }
 
-/* Configurações básicas da página inteira */
+body.dark-mode {
+  --bg-body: #1a120b;
+  --bg-card: #2c241e;
+  --bg-sobre: #b35f1a;
+  --text-body: #e6a56f;
+  --text-heading: #f5bc8e;     
+  --text-subhead: #e6a56f;     
+  --text-dark: #C95E20;        
+  --text-mid: #e6a56f;         
+  
+  --border-light: #5a463a;
+  --bg-depoimento: #2a1f18;
+  --text-depoimento: #f0e2d4;
+  --bg-contato-info: #2a1f18;
+  --bg-contato-form: #3e2e26;
+  --input-bg: #3a2c24;
+  --input-border: #7a5a4a;
+  
+  --color-body: #e6a56f;
+  --color-heading: #f5bc8e;    
+  --color-subhead: #e6a56f;    
+}
+
 html {
-  scroll-behavior: smooth; /* Rolagem suave ao clicar em links âncora */
-  scroll-padding-top: 70px; /* Espaço extra no topo ao rolar */
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 }
 
 body {
-  background: #FFFCF8; /* Cor de fundo clara/bege */
-  font-family: 'Nunito', sans-serif; /* Fonte principal do site */
-  min-height: 100vh; /* Garante que o body ocupe toda a tela */
-  overflow-x: hidden; /* Evita barra de rolagem horizontal */
+  background: var(--bg-body);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* IDs das seções (usados para navegação) */
 #inicio, #sobre, #cardapio, #adocao {
-  scroll-margin-top: 80px; /* Espaço extra ao clicar no menu */
+  scroll-margin-top: 80px;
 }
 
-/* Barra de navegação superior (topbar) */
 .topbar {
-  position: fixed; /* Fixa no topo da tela */
+  position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100; /* Fica acima de outros elementos */
+  z-index: 100;
   background-color: var(--brown-nav);
   height: 100px;
   display: flex;
@@ -76,21 +108,20 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  gap: 2.5rem; /* Espaço entre os links */
+  gap: 2.5rem;
 }
 
 .navbar a {
   color: #f5ddb0;
-  text-decoration: none; /* Remove o sublinhado */
+  text-decoration: none;
   font-weight: 600;
   font-size: var(--body-lg);
-  transition: color 0.2s;  /* Animação suave ao passar o mouse */
+  transition: color 0.2s;
 }
 
 .navbar a:hover { color: #fff; }
 
-/* Botão da topbar */
-.topbar button {
+.topbar button, .theme-toggle {
   background: var(--orange);
   color: #fff;
   border: 2px solid var(--orange-light);
@@ -104,22 +135,26 @@ body {
   transition: background 0.2s, transform 0.15s;
 }
 
-.topbar button:hover {
+.theme-toggle {
+  padding: 8px 16px;
+  font-size: 1.2rem;
+}
+
+.topbar button:hover, .theme-toggle:hover {
   background: #c45f0a;
-  transform: scale(1.04);  /* Efeito de crescer um pouco */
+  transform: scale(1.04);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-.topbar button:active {
+.topbar button:active, .theme-toggle:active {
   background: #8a3a05;
   transform: scale(0.96);
 }
 
-/* MAIN + HERO */
-main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar fixa */
+main { padding-top: 60px; }
 
 .hero {
-  min-height: calc(100vh - 60px); /* Ocupa quase toda a tela */
+  min-height: calc(100vh - 60px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +163,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   box-sizing: border-box;
 }
 
-/* Texto do lado esquerdo do Hero */
 .hero-texto {
   flex: 1;
   text-align: center;
@@ -147,10 +181,8 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   color: var(--color-subhead);
   font-weight: 600;
   line-height: 1.4;
-  align-items: center;
 }
 
-/* Carrossel de Imagens (HERO) */
 .hero-carrossel input[type="radio"] {
   display: none;
 }
@@ -161,23 +193,22 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   border-radius: 24px;
   border: 10px solid var(--orange);
   overflow: hidden;
-  aspect-ratio: 16 / 10; /* Mantém proporção 16:10 */
+  aspect-ratio: 16 / 10;
   max-width: 640px;
 }
 
-/* Funcionamento do carrossel */
 .carrossel-track {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease; /* Animação suave ao trocar slide */
+  transition: transform 0.5s ease;
 }
 
 .carrossel-track img {
   min-width: 100%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Imagem preenche o espaço */
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -247,7 +278,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   transform: scale(1.4);
 }
 
-/* Sobre Nós */
 .sobre-nos {
   max-width: 900px;
   margin: 60px auto;
@@ -259,7 +289,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   font-family: 'Fredoka', cursive;
   font-size: var(--title-xl);
   color: var(--color-heading);
-  margin-bottom: -140px; /* Sobreposição intencional */
+  margin-bottom: -140px;
 }
 
 .sobre-nos h2 {
@@ -280,16 +310,15 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   width: 394px;
   position: relative;
   z-index: 2;
-  margin-bottom: -158px;  /* Gato "saindo" da caixa */
+  margin-bottom: -158px;
 }
 
-/* Caixa laranja com texto */
 .sobre-conteudo {
-  background: var(--orange);
+  background: var(--bg-sobre);
   border-radius: 16px;
   padding: 20px 100px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: start;
   text-align: left;
@@ -305,31 +334,8 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   line-height: 1.6;
 }
 
-/* ─── VISITAS / REGRAS ───────────────────────────── */
 .visitas-section {
   margin-top: 80px;
-}
-
-.regras-intro {
-  color: var(--color-body);
-  font-size: var(--body-lg);
-  line-height: 1.6;
-  margin-bottom: 24px;
-  padding-top: 140px;
-}
-
-.regras-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-  gap: 16px;
-}
-
-.card {
-  background: var(--orange-light);
-  border: 6px solid var(--orange);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
 }
 
 .visitas-titulo {
@@ -362,7 +368,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: #fff8f0;
+  background: var(--bg-card);
   border: 2px solid var(--orange-light);
   border-radius: 14px;
   padding: 20px 24px;
@@ -438,7 +444,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   transform: scale(1.04);
 }
 
-/* ─── ADOÇÃO ─────────────────────────────────────── */
 .adocao {
   max-width: 1100px;
   width: 100%;
@@ -468,7 +473,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
 }
 
 .adocao-card {
-  background: #fff;
+  background: var(--bg-card);
   border: 8px solid var(--orange);
   border-radius: 20px;
   overflow: hidden;
@@ -531,7 +536,6 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   transform: scale(1.03);
 }
 
-/* ─── FEEDBACK & DEPOIMENTOS ───────────────────────── */
 #feedback {
   background: #2a1010;
   padding: 60px 2rem 40px;
@@ -567,7 +571,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
 }
 
 .dep-card {
-  background: #3d1a1a;
+  background: var(--bg-depoimento);
   border-radius: 12px;
   padding: 1.2rem;
   display: flex;
@@ -591,7 +595,7 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
 .dep-stars { color: #e07820; font-size: 15px; }
 
 .dep-texto {
-  color: #f0dcc8;
+  color: var(--text-depoimento);
   font-size: 13.5px;
   line-height: 1.6;
   flex: 1;
@@ -618,106 +622,9 @@ main { padding-top: 60px; } /* Evita que o hero fique escondido atrás da topbar
   flex-shrink: 0;
 }
 
-.dep-name { font-size: 13px; font-weight: 700; color: #f0dcc8; margin: 0; }
+.dep-name { font-size: 13px; font-weight: 700; color: var(--text-depoimento); margin: 0; }
 .dep-date { font-size: 11px; color: #c9a88a; margin: 0; }
 
-.dep-form-wrap {
-  background: #3d1a1a;
-  border-radius: 16px;
-  padding: 2rem;
-}
-
-.dep-form-titulo {
-  font-family: 'Fredoka', cursive;
-  color: #f0dcc8;
-  font-size: 1.4rem;
-  margin: 0 0 4px;
-}
-
-.dep-form-sub { color: #c9a88a; font-size: 13px; margin: 0 0 1.2rem; }
-
-.dep-input {
-  width: 100%;
-  background: #2a1010;
-  border: 1px solid rgba(201,168,138,0.3);
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 14px;
-  color: #f0dcc8;
-  font-family: 'Nunito', sans-serif;
-  outline: none;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.dep-input::placeholder { color: #7a5a4a; }
-
-textarea.dep-input { resize: none; height: 90px; }
-
-.dep-form-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.dep-form-col {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.dep-field-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: #c9a88a;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-}
-
-.dep-stars-input {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 0;
-}
-
-.dep-stars-input span {
-  font-size: 26px;
-  cursor: pointer;
-  color: #7a5a4a;
-  transition: color 0.15s;
-}
-
-.dep-stars-input span.ativo { color: #e07820; }
-
-.dep-btn {
-  background: #c9854a;
-  color: #fff;
-  border: 2px solid #e0a060;
-  border-radius: 100px;
-  padding: 12px 28px;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: 'Nunito', sans-serif;
-  cursor: pointer;
-  width: 100%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-  transition: background 0.2s, transform 0.15s;
-}
-
-.dep-btn:hover {
-  background: #a86030;
-  transform: scale(1.04);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-.dep-btn:active {
-  background: #7a4020;
-  transform: scale(0.96);
-}
-
-/* ─── CONTATO ─────────────────────────────────────── */
 #contato {
     padding: 80px 2rem;
     background: #2a1010;
@@ -739,7 +646,7 @@ textarea.dep-input { resize: none; height: 90px; }
 }
 
 #contato .contato-info {
-    background: #3d1a1a;
+    background: var(--bg-contato-info);
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
@@ -851,7 +758,7 @@ textarea.dep-input { resize: none; height: 90px; }
 }
 
 #contato .contato-form {
-    background: #f7f0e8;
+    background: var(--bg-contato-form);
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
@@ -860,7 +767,7 @@ textarea.dep-input { resize: none; height: 90px; }
 #contato .contato-form h2 {
     font-family: 'Fredoka', cursive;
     font-size: 1.8rem;
-    color: #3d1a1a;
+    color: var(--color-heading);
     font-weight: 600;
     margin: 0 0 0.3rem 0;
     padding: 0;
@@ -872,7 +779,7 @@ textarea.dep-input { resize: none; height: 90px; }
 
 #contato .contato-subtitulo {
     font-size: 13px;
-    color: #7a5a4a;
+    color: var(--text-mid);
     margin: 0 0 1.8rem 0;
     padding: 0;
     line-height: 1.5;
@@ -893,7 +800,7 @@ textarea.dep-input { resize: none; height: 90px; }
 #contato .contato-campo label {
     font-size: 11px;
     font-weight: 700;
-    color: #7a5a4a;
+    color: var(--text-mid);
     text-transform: uppercase;
     letter-spacing: 1.2px;
     margin: 0 0 6px 0;
@@ -908,12 +815,12 @@ textarea.dep-input { resize: none; height: 90px; }
 
 #contato .contato-campo input,
 #contato .contato-campo textarea {
-    background: #fff;
-    border: 1px solid rgba(201,168,138,0.6);
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
     border-radius: 8px;
     padding: 10px 14px;
     font-size: 14px;
-    color: #3d1a1a;
+    color: var(--text-body);
     font-family: 'Nunito', sans-serif;
     outline: none;
     width: 100%;
@@ -978,7 +885,7 @@ textarea.dep-input { resize: none; height: 90px; }
 
 #contato .contato-check label {
     font-size: 12px;
-    color: #7a5a4a;
+    color: var(--text-mid);
     line-height: 1.5;
     cursor: pointer;
     text-transform: none;
@@ -1040,11 +947,14 @@ textarea.dep-input { resize: none; height: 90px; }
     transform: scale(1.15);
 }
 
-/* ─── ESTATÍSTICAS ─────────────────────────────────── */
 .estatisticas {
     background: linear-gradient(135deg, #fff8f0, #ffe6cc);
     padding: 80px 24px;
     text-align: center;
+}
+
+body.dark-mode .estatisticas {
+    background: linear-gradient(135deg, #2a241e, #1f1913);
 }
 
 .estatisticas-container {
@@ -1061,7 +971,7 @@ textarea.dep-input { resize: none; height: 90px; }
 
 .estatisticas-intro {
     font-size: 1.2rem;
-    color: #5a2d00;
+    color: var(--text-mid);
     max-width: 700px;
     margin: 0 auto 50px;
 }
@@ -1074,7 +984,7 @@ textarea.dep-input { resize: none; height: 90px; }
 }
 
 .estatistica-card {
-    background: white;
+    background: var(--bg-card);
     border: 6px solid var(--orange);
     border-radius: 20px;
     padding: 32px 20px;
@@ -1091,7 +1001,7 @@ textarea.dep-input { resize: none; height: 90px; }
     margin-bottom: 16px;
 }
 
-.estatistica-number {
+.estatistica-numero {
     font-family: 'Fredoka', cursive;
     font-size: 3.2rem;
     font-weight: 700;
@@ -1101,11 +1011,10 @@ textarea.dep-input { resize: none; height: 90px; }
 
 .estatistica-label {
     font-size: 1.05rem;
-    color: #5a2d00;
+    color: var(--text-mid);
     font-weight: 600;
 }
 
-/* Gráfico de Idade em barras */
 .idade {
     max-width: 700px;
     margin: 0 auto;
@@ -1164,28 +1073,23 @@ textarea.dep-input { resize: none; height: 90px; }
 .idade-label {
     margin-top: 12px;
     font-weight: 600;
-    color: #5a2d00;
+    color: var(--text-mid);
     font-size: 0.95rem;
 }
 
-/* ─── RESPONSIVIDADE (MEDIA QUERIES) ─────────────────── */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     padding: 32px 24px;
   }
-
   .hero-texto { text-align: center; }
-
   .hero-carrossel {
     width: 100%;
     max-width: 100%;
   }
-
   .adocao-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .dep-grid {
     grid-template-columns: 1fr;
   }
@@ -1214,18 +1118,169 @@ textarea.dep-input { resize: none; height: 90px; }
     padding: 12px 1rem;
     gap: 10px;
   }
-
   .navbar { gap: 1rem; }
-
   .adocao-cards {
     grid-template-columns: 1fr;
   }
 }
 
-/* ─── DEPOIMENTOS ─────────────────────────────────── */
 #depoimentos {
   background: #2a1010;
   padding: 60px 2rem 20px;
   display: flex;
   justify-content: center;
+}
+
+/* ===== ALTO CONTRASTE LARANJA (CORRIGIDO) ===== */
+body.high-contrast {
+    --bg-body: #000000 !important;
+    --bg-card: #000000 !important;
+    --bg-sobre: #000000 !important;
+    --text-body: #ff8c00 !important;
+    --text-heading: #ff8c00 !important;
+    --text-subhead: #ff8c00 !important;
+    --border-light: #ff8c00 !important;
+    --bg-depoimento: #000000 !important;
+    --text-depoimento: #ff8c00 !important;
+    --bg-contato-info: #000000 !important;
+    --bg-contato-form: #000000 !important;
+    --input-bg: #000000 !important;
+    --input-border: #ff8c00 !important;
+    --color-body: #ff8c00 !important;
+    --color-heading: #ff8c00 !important;
+    --color-subhead: #ff8c00 !important;
+    --text-dark: #ff8c00 !important;
+    --text-mid: #ff8c00 !important;
+    --orange: #ff8c00 !important;
+    --orange-light: #ff8c00 !important;
+    --brown-nav: #000000 !important;
+}
+
+body.high-contrast .topbar {
+    border-bottom: 3px solid #ff8c00;
+}
+
+body.high-contrast .navbar a {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+body.high-contrast .button,
+body.high-contrast .theme-toggle,
+body.high-contrast .contrast-toggle {
+    background: #000000;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+}
+
+body.high-contrast .hero-carrossel {
+    border: 4px solid #ff8c00;
+}
+
+body.high-contrast .carrossel-btn {
+    background: #000000;
+    border: 2px solid #ff8c00;
+    color: #ff8c00;
+}
+
+body.high-contrast .sobre-conteudo {
+    border: 3px solid #ff8c00;
+    background: #000000;
+}
+
+body.high-contrast .regra-item {
+    border: 2px solid #ff8c00;
+    background: #000000;
+}
+
+body.high-contrast .visitas-cta {
+    border: 3px solid #ff8c00;
+    background: #000000;
+}
+
+body.high-contrast .visitas-cta button {
+    background: #000000;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+}
+
+body.high-contrast .adocao-card {
+    border: 4px solid #ff8c00;
+    background: #000000;
+}
+
+body.high-contrast .adocao-btn {
+    background: #000000;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+}
+
+body.high-contrast .dep-card {
+    border: 2px solid #ff8c00;
+    background: #000000;
+}
+
+body.high-contrast .contato-info,
+body.high-contrast .contato-form {
+    border: 2px solid #ff8c00;
+}
+
+body.high-contrast .contato-campo input,
+body.high-contrast .contato-campo textarea {
+    background: #000000;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+}
+
+body.high-contrast .contato-enviar {
+    background: #000000;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+}
+
+/* Estatísticas em alto contraste */
+body.high-contrast .estatisticas {
+    background: #000000 !important;
+}
+
+body.high-contrast .estatistica-card {
+    border: 3px solid #ff8c00;
+    background: #000000;
+}
+
+body.high-contrast .estatistica-numero,
+body.high-contrast .estatistica-label,
+body.high-contrast .estatisticas h2,
+body.high-contrast .estatisticas-intro,
+body.high-contrast .idade h3,
+body.high-contrast .idade-label {
+    color: #ff8c00 !important;
+}
+
+body.high-contrast .barra {
+    background: #ff8c00;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+/* Removido margin e padding extras que descentralizavam */
+body.high-contrast .menu,
+body.high-contrast .cardapio-wrap,
+body.high-contrast .hero,
+body.high-contrast .sobre-nos,
+body.high-contrast .adocao,
+body.high-contrast #depoimentos,
+body.high-contrast #contato {
+    border: none;
+}
+
+/* Adicionar borda apenas nos containers internos sem deslocar */
+body.high-contrast .cardapio-wrap,
+body.high-contrast .contato-wrap,
+body.high-contrast .feedback-wrap,
+body.high-contrast .estatisticas-container {
+    border: 2px solid #ff8c00;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px auto;
 }
