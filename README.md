@@ -3,7 +3,14 @@
 **Sistema Web para Cafeteria Temática com Terapia Assistida por Animais**
 
 Projeto Integrado Multidisciplinar (PIM III) - Análise e Desenvolvimento de Sistemas | UNIP
+---
 
+## Desenvolvido por:
+- **Arthur Sousa:** Backend e Machine Learning
+- **Danilo Ferreira:** Acessibilidade e LIBRAS
+- **Lucas Bastazini:** Banco de Dados
+- **Oliver Santos:** Análise de Dados e Documentação
+- **Paola Souza:** Frontend, UX/UI e Responsividade
 ---
 
 ## Sobre o Projeto
