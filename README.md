@@ -50,8 +50,6 @@ O projeto foi desenvolvido com foco em **qualidade, usabilidade, acessibilidade 
 
 **Acessibilidade:**
 - VLibras
-- Modo Escuro
-- Modo Alto Contraste
 
 ---
 
