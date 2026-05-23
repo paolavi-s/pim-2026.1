@@ -1284,3 +1284,35 @@ body.high-contrast .estatisticas-container {
     padding: 20px;
     margin: 20px auto;
 }
+
+/* Responsividade para telas grandes */
+@media (min-width: 1400px) {
+  .hero {
+    padding: 2rem 8rem;
+    gap: 6rem;
+  }
+  
+  .hero-texto h1 {
+    font-size: 4.5rem;
+  }
+  
+  .hero-texto h2 {
+    font-size: 2.5rem;
+  }
+  
+  .sobre-nos,
+  .adocao,
+  .cardapio-wrap,
+  .estatisticas-container,
+  .contato-wrap {
+    max-width: 85%;
+  }
+  
+  .regras-lista {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .adocao-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
