@@ -1,0 +1,35 @@
+@nekoffee_HostAddress = http://localhost:5052
+
+GET http://localhost:5052/clients
+
+###
+
+GET http://localhost:5052/clients/3
+
+###
+
+POST http://localhost:5052/clients
+Content-Type: application/json
+
+{
+    "Nome_Cliente": "sdfads",
+    "Sobrenome": "fdsfads",
+    "Idade": 18,
+    "Cpf_Cliente": "123.426.758-53"
+}
+
+###
+
+PUT http://localhost:5052/clients/1
+content-type: application/json
+
+{
+    "Nome_Cliente": "sdfads",
+    "Sobrenome": "fdsfads",
+    "Idade": 18,
+    "Cpf_Cliente": "123.426.758-53"
+}
+
+###
+
+DELETE http://localhost:5052/clients/1
