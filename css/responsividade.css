@@ -1,0 +1,224 @@
+/* ===== RESPONSIVIDADE MOBILE E TABLETS ===== */
+
+/* Tablets (entre 769px e 1024px) - menu normal visível */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    padding: 32px 40px;
+  }
+  .hero-texto { text-align: center; }
+  .hero-carrossel { width: 100%; max-width: 80%; margin: 0 auto; }
+
+  .sobre-conteudo {
+    grid-template-columns: 1fr;
+    padding: 100px 40px 30px;
+  }
+
+  .sobre-gato { width: 320px; margin-bottom: -120px; }
+  .sobre-nos > h2:first-child { margin-bottom: -120px; }
+
+  .visitas-intro,
+  .regras-lista,
+  .visitas-cta { max-width: 80%; }
+
+  .adocao-cards { grid-template-columns: repeat(2, 1fr); }
+  .dep-grid { grid-template-columns: repeat(2, 1fr); }
+  .estatisticas-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  .idade-grafico { gap: 30px; }
+  .barra { width: 65px; }
+  
+  /* Menu normal em tablets */
+  .topbar {
+    height: auto;
+    padding: 12px 30px;
+  }
+  .logo-img { max-height: 55px; }
+  .navbar { display: flex !important; gap: 1.5rem; }
+  .navbar a { font-size: 0.95rem; }
+  .hamburger { display: none !important; }
+  .reservar-btn { display: block; }
+}
+
+/* Celular (até 768px) - mostra hambúrguer */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 32px 24px;
+  }
+  .hero-texto { text-align: center; }
+  .hero-carrossel { width: 100%; max-width: 100%; }
+
+  .sobre-conteudo {
+    grid-template-columns: 1fr;
+    padding: 100px 24px 24px;
+  }
+
+  .sobre-gato { width: 280px; margin-bottom: -110px; }
+  .sobre-nos > h2:first-child { margin-bottom: -100px; }
+
+  .visitas-intro,
+  .regras-lista,
+  .visitas-cta { max-width: 100%; }
+
+  .visitas-cta {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .adocao-cards { grid-template-columns: repeat(2, 1fr); }
+  .dep-grid { grid-template-columns: 1fr; }
+  .estatisticas-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  .idade-grafico { gap: 16px; }
+  .barra { width: 50px; }
+  
+  /* Topbar e menu hambúrguer */
+  .topbar {
+    padding: 10px 20px;
+    height: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .logo-img { max-height: 45px; }
+  
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--brown-nav);
+    padding: 0;
+    z-index: 99;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+
+  .navbar.aberto { display: flex; }
+
+  .navbar a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .navbar a:last-child { border-bottom: none; }
+
+  .reservar-btn { display: none; }
+  .hamburger { display: block; }
+
+  .theme-toggle,
+  .contrast-toggle {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  #contato .contato-wrap { grid-template-columns: 1fr; border-radius: 0; }
+  #contato .contato-form-row { grid-template-columns: 1fr; }
+}
+
+/* Celular pequeno (até 520px) */
+@media (max-width: 520px) {
+  .adocao-cards { grid-template-columns: 1fr; }
+  .estatisticas-grid { grid-template-columns: 1fr; }
+  .idade-grafico { gap: 12px; }
+  .barra { width: 40px; font-size: 11px; }
+  
+  .logo-img { max-height: 40px; }
+  .navbar a { padding: 10px 0; font-size: 0.9rem; }
+  .hamburger { width: 38px; height: 38px; font-size: 1.2rem; }
+}
+
+/* Tablets landscape (701px a 960px) */
+@media (min-width: 701px) and (max-width: 960px) {
+  .dep-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== TELAS GRANDES (ACIMA DE 1200px) ===== */
+@media (min-width: 1200px) {
+  :root {
+    --title-xl:   3rem;
+    --title-lg:   2.2rem;
+    --title-sm:   1.5rem;
+    --body-lg:    1.25rem;
+    --body-md:    1.1rem;
+    --body-sm:    1rem;
+  }
+
+  .topbar {
+    padding: 20px 8%;
+    height: 110px;
+  }
+  
+  .logo-img { max-height: 110px; }
+  .navbar { gap: 3rem; }
+  .navbar a { font-size: 1.15rem; }
+  main { padding-top: 110px; }
+
+  .hero {
+    gap: 5rem;
+    padding: 2rem 8%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .hero-texto h1 { font-size: 4rem; }
+  .hero-texto h2 { font-size: 2.2rem; }
+  .hero-carrossel { max-width: 900px; }  /* CORRIGIDO: estava 2000x */
+
+  .sobre-nos { max-width: 80%; margin: 80px auto; }
+  .sobre-nos > h2:first-child { margin-bottom: -150px; font-size: 3.5rem; }
+  .sobre-gato { width: 450px; margin-bottom: -170px; }
+  .sobre-conteudo { max-width: 1000px; padding: 35px 70px; gap: 40px; }
+
+  .visitas-intro,
+  .regras-lista,
+  .visitas-cta { max-width: 70%; }
+  
+  .visitas-cta { padding: 32px 50px; }
+
+  .adocao { max-width: 85%; padding: 0 5%; }
+  .adocao-cards { gap: 30px; }
+  .adocao-foto-gato1 img { height: 380px; }
+
+  .menu { padding: 60px 5%; }
+  .cardapio-wrap { max-width: 90%; padding: 40px 5%; }
+  .menu-card { min-width: 240px; max-width: 240px; }
+  .menu-card-img { height: 150px; }
+
+  .estatisticas { padding: 80px 5%; }
+  .estatisticas-container { max-width: 90%; }
+  .estatisticas h2 { font-size: 3rem; }
+  .estatistica-numero { font-size: 3.5rem; }
+  
+  .idade-grafico { gap: 50px; height: 260px; }
+  .barra { width: 85px; }
+
+  #depoimentos { padding: 80px 5%; }
+  .feedback-wrap { max-width: 90%; }
+  .dep-titulo { font-size: 2.2rem; }
+  .dep-grid { gap: 25px; }
+  .dep-card { padding: 1.5rem; }
+
+  #contato { padding: 80px 5%; }
+  #contato .contato-wrap { max-width: 85%; }
+  #contato .contato-form h2 { font-size: 2rem; }
+}
+
+/* ===== TELAS MUITO GRANDES (ACIMA DE 1600px) ===== */
+@media (min-width: 1600px) {
+  body {
+    zoom: 1.2;  /* Aumenta tudo proporcionalmente */
+  }
+  
+  .hero-carrossel {
+    max-width: 1300px;  /* Aumenta o carrossel */
+    border-width: 20px; /* Aumenta a borda também */
+  }
+}
