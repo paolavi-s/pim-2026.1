@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nekoffee")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac3dced6ac895aa1d8fb73128f13574d26405d64")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+592863c3a325247fc09ec8c44508dd8bd707363b")]
 [assembly: System.Reflection.AssemblyProductAttribute("nekoffee")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nekoffee")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
