@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:CafeApp.Views"
+       x:Class="CafeApp.AppShell"
+       Shell.FlyoutBehavior="Disabled"
+       Shell.NavBarIsVisible="False"
+       Shell.TabBarIsVisible="False">
+
+    <!-- O primeiro ShellContent é a tela em que o app abre: o Login. -->
+    <!-- Cada rota é usada pela BarraNavegacao: Shell.Current.GoToAsync("//cardapio") -->
+    <!-- A aba Adoção abre a lista de gatinhos. Detalhe e formulário são registrados no AppShell.xaml.cs -->
+    <ShellContent Title="Login"    Route="login"    ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent Title="Início"   Route="inicio"   ContentTemplate="{DataTemplate views:InicioPage}" />
+    <ShellContent Title="Cardápio" Route="cardapio" ContentTemplate="{DataTemplate views:CardapioPage}" />
+    <ShellContent Title="Reservas" Route="reservas" ContentTemplate="{DataTemplate views:ReservasPage}" />
+    <ShellContent Title="Adoção"   Route="adocao"   ContentTemplate="{DataTemplate views:GatosPage}" />
+</Shell>
